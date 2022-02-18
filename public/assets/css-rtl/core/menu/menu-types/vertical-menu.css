@@ -157,8 +157,8 @@ body.vertical-layout.vertical-menu.menu-collapsed .main-menu .main-menu-content 
   color : #FFFFFF;
   text-transform : uppercase;
   text-align : right;
-  background-color : #1E9FF2;
-  border-color : #1E9FF2;
+  background-color : #05a354;
+  border-color : #05a354;
   padding : 15px 20px;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -242,8 +242,8 @@ body.vertical-layout.vertical-menu.menu-collapsed .main-menu .navigation > li > 
   font-weight : 600;
   color : #FFFFFF;
   text-align : right;
-  background-color : #666EE8;
-  border-color : #666EE8;
+  background-color : #339966;
+  border-color : #339966;
   padding : 14px 20px;
 }
 body.vertical-layout.vertical-menu.menu-collapsed .main-menu .navigation > li > a > i {

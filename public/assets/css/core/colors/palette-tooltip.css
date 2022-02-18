@@ -15,12 +15,12 @@
   color: #000000; }
 
 .tooltip-bg-primary .tooltip-inner {
-  background-color: #666ee8; }
+  background-color: #339966; }
   .tooltip-bg-primary .tooltip-inner:before {
-    border-top-color: #666ee8 !important; }
+    border-top-color: #339966 !important; }
 
 .tooltip-text-primary .tooltip-inner {
-  color: #666ee8; }
+  color: #339966; }
 
 .tooltip-bg-secondary .tooltip-inner {
   background-color: #6b6f82; }
@@ -39,12 +39,12 @@
   color: #28d094; }
 
 .tooltip-bg-info .tooltip-inner {
-  background-color: #1e9ff2; }
+  background-color: #05a354; }
   .tooltip-bg-info .tooltip-inner:before {
-    border-top-color: #1e9ff2 !important; }
+    border-top-color: #05a354 !important; }
 
 .tooltip-text-info .tooltip-inner {
-  color: #1e9ff2; }
+  color: #05a354; }
 
 .tooltip-bg-warning .tooltip-inner {
   background-color: #ff9149; }

@@ -11,7 +11,7 @@
       padding: 0.25rem 0.75rem;
       cursor: pointer; }
       .typeahead .twitter-typeahead .tt-menu .tt-suggestion:hover {
-        background-color: #666ee8;
+        background-color: #339966;
         color: #fff; }
   .typeahead .twitter-typeahead .empty-message {
     padding: 5px 10px;

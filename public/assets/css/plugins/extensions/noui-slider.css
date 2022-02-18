@@ -47,18 +47,18 @@
   border-radius: 50%;
   background: #FFF;
   outline: none;
-  border: 5px solid #666ee8; }
+  border: 5px solid #339966; }
   .noUi-handle:after, .noUi-handle:before {
     display: none; }
 
 .circle-filled .noUi-handle {
-  background: #666ee8;
+  background: #339966;
   border-radius: 50%; }
   .circle-filled .noUi-handle:after, .circle-filled .noUi-handle:before {
     display: none; }
 
 .square .noUi-handle {
-  background: #666ee8;
+  background: #339966;
   border-radius: 3px; }
   .square .noUi-handle:before {
     display: block;
@@ -90,7 +90,7 @@
   top: 2px; }
 
 .noUi-connect {
-  background: #666ee8;
+  background: #339966;
   box-shadow: none; }
 
 .noUi-vertical {
@@ -103,7 +103,7 @@
     top: -5px;
     left: -6px; }
   .noUi-vertical.square .noUi-handle {
-    background: #666ee8;
+    background: #339966;
     border-radius: 3px; }
     .noUi-vertical.square .noUi-handle:before {
       display: block;

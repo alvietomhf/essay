@@ -1,10 +1,10 @@
 .shepherd-element {
   background: transparent; }
   .shepherd-element.shepherd-element-attached-right .shepherd-arrow {
-    border-left-color: #666ee8 !important;
+    border-left-color: #339966 !important;
     border-bottom-color: transparent !important; }
   .shepherd-element .shepherd-arrow {
-    border-bottom-color: #666ee8 !important; }
+    border-bottom-color: #339966 !important; }
 
 .tour-container {
   font-size: 1rem; }
@@ -13,7 +13,7 @@
     .tour-container .shepherd-header .shepherd-title {
       color: #fff; }
   .tour-container.shadow-md .shepherd-content, .tour-container.bg-purple-dark .shepherd-content {
-    background-color: #666ee8 !important;
+    background-color: #339966 !important;
     border-radius: .5rem;
     padding: 10px; }
     .tour-container.shadow-md .shepherd-content .shepherd-text, .tour-container.bg-purple-dark .shepherd-content .shepherd-text {

@@ -199,9 +199,9 @@
             label: "euro",
             data: [20, 50, 30, 47, 60, 40, 70],
             backgroundColor: "transparent",
-            borderColor: "#1e9ff2",
+            borderColor: "#05a354",
             borderWidth: 3,
-            strokeColor: "#1e9ff2",
+            strokeColor: "#05a354",
             pointRadius: 0,
         }]
     };

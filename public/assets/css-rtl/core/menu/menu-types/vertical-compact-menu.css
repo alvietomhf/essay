@@ -61,8 +61,8 @@
   color : #FFFFFF;
   text-transform : uppercase;
   text-align : right;
-  background-color : #1E9FF2;
-  border-color : #1E9FF2;
+  background-color : #05a354;
+  border-color : #05a354;
   padding : 15px 20px;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -192,7 +192,7 @@
 .vertical-compact-menu .main-menu .navigation > li.active > a {
   font-weight : 400;
   background : transparent;
-  border-left : 4px solid #666EE8;
+  border-left : 4px solid #339966;
   margin : 0;
   border-radius : 0;
   padding-right : 0.8rem;

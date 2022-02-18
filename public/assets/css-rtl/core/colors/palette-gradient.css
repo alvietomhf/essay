@@ -7,38 +7,38 @@
 }
 
 .bg-gradient-x-primary {
-  background-image : -webkit-linear-gradient(right, #3A44E1 0%, #9298EF 100%);
-  background-image :         linear-gradient(to left, #3A44E1 0%, #9298EF 100%);
+  background-image : -webkit-linear-gradient(right, #3bb377 0%, #9298EF 100%);
+  background-image :         linear-gradient(to left, #3bb377 0%, #9298EF 100%);
   background-repeat : repeat-x;
 }
 
 .bg-gradient-y-primary {
-  background-image : -webkit-linear-gradient(top, #3A44E1 0%, #9298EF 100%);
-  background-image :         linear-gradient(to bottom, #3A44E1 0%, #9298EF 100%);
+  background-image : -webkit-linear-gradient(top, #3bb377 0%, #9298EF 100%);
+  background-image :         linear-gradient(to bottom, #3bb377 0%, #9298EF 100%);
   background-repeat : repeat-x;
 }
 
 .bg-gradient-directional-primary {
-  background-image : -webkit-linear-gradient(135deg, #3A44E1, #9298EF);
-  background-image :         linear-gradient(-45deg, #3A44E1, #9298EF);
+  background-image : -webkit-linear-gradient(135deg, #3bb377, #9298EF);
+  background-image :         linear-gradient(-45deg, #3bb377, #9298EF);
   background-repeat : repeat-x;
 }
 
 .bg-gradient-x2-primary {
-  background-image : -webkit-linear-gradient(right, #9298EF, #666EE8 50%, #A9ADF2);
-  background-image :         linear-gradient(to left, #9298EF, #666EE8 50%, #A9ADF2);
+  background-image : -webkit-linear-gradient(right, #9298EF, #339966 50%, #A9ADF2);
+  background-image :         linear-gradient(to left, #9298EF, #339966 50%, #A9ADF2);
   background-repeat : no-repeat;
 }
 
 .bg-gradient-y2-primary {
-  background-image : -webkit-linear-gradient(#9298EF, #666EE8 50%, #A9ADF2);
-  background-image :         linear-gradient(#9298EF, #666EE8 50%, #A9ADF2);
+  background-image : -webkit-linear-gradient(#9298EF, #339966 50%, #A9ADF2);
+  background-image :         linear-gradient(#9298EF, #339966 50%, #A9ADF2);
   background-repeat : no-repeat;
 }
 
 .bg-gradient-radial-primary {
-  background-image : -webkit-radial-gradient(circle, #3A44E1, #9298EF);
-  background-image :         radial-gradient(circle, #3A44E1, #9298EF);
+  background-image : -webkit-radial-gradient(circle, #3bb377, #9298EF);
+  background-image :         radial-gradient(circle, #3bb377, #9298EF);
   background-repeat : no-repeat;
 }
 
@@ -160,14 +160,14 @@
 }
 
 .bg-gradient-x2-info {
-  background-image : -webkit-linear-gradient(right, #4EB4F5, #1E9FF2 50%, #66BEF6);
-  background-image :         linear-gradient(to left, #4EB4F5, #1E9FF2 50%, #66BEF6);
+  background-image : -webkit-linear-gradient(right, #4EB4F5, #05a354 50%, #66BEF6);
+  background-image :         linear-gradient(to left, #4EB4F5, #05a354 50%, #66BEF6);
   background-repeat : no-repeat;
 }
 
 .bg-gradient-y2-info {
-  background-image : -webkit-linear-gradient(#4EB4F5, #1E9FF2 50%, #66BEF6);
-  background-image :         linear-gradient(#4EB4F5, #1E9FF2 50%, #66BEF6);
+  background-image : -webkit-linear-gradient(#4EB4F5, #05a354 50%, #66BEF6);
+  background-image :         linear-gradient(#4EB4F5, #05a354 50%, #66BEF6);
   background-repeat : no-repeat;
 }
 

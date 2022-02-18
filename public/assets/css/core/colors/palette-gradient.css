@@ -31,27 +31,27 @@
   background-color: transparent; }
 
 .bg-gradient-x-primary {
-  background-image: linear-gradient(to right, #3a44e1 0%, #9298ef 100%);
+  background-image: linear-gradient(to right, #3bb377 0%, #9298ef 100%);
   background-repeat: repeat-x; }
 
 .bg-gradient-y-primary {
-  background-image: linear-gradient(to bottom, #3a44e1 0%, #9298ef 100%);
+  background-image: linear-gradient(to bottom, #3bb377 0%, #9298ef 100%);
   background-repeat: repeat-x; }
 
 .bg-gradient-directional-primary {
-  background-image: linear-gradient(45deg, #3a44e1, #9298ef);
+  background-image: linear-gradient(45deg, #3bb377, #9298ef);
   background-repeat: repeat-x; }
 
 .bg-gradient-x2-primary {
-  background-image: linear-gradient(to right, #9298ef, #666ee8 50%, #a9adf2);
+  background-image: linear-gradient(to right, #9298ef, #339966 50%, #a9adf2);
   background-repeat: no-repeat; }
 
 .bg-gradient-y2-primary {
-  background-image: linear-gradient(#9298ef, #666ee8 50%, #a9adf2);
+  background-image: linear-gradient(#9298ef, #339966 50%, #a9adf2);
   background-repeat: no-repeat; }
 
 .bg-gradient-radial-primary {
-  background-image: radial-gradient(circle, #3a44e1, #9298ef);
+  background-image: radial-gradient(circle, #3bb377, #9298ef);
   background-repeat: no-repeat; }
 
 .bg-gradient-striped-primary {
@@ -172,11 +172,11 @@
   background-repeat: repeat-x; }
 
 .bg-gradient-x2-info {
-  background-image: linear-gradient(to right, #4eb4f5, #1e9ff2 50%, #66bef6);
+  background-image: linear-gradient(to right, #4eb4f5, #05a354 50%, #66bef6);
   background-repeat: no-repeat; }
 
 .bg-gradient-y2-info {
-  background-image: linear-gradient(#4eb4f5, #1e9ff2 50%, #66bef6);
+  background-image: linear-gradient(#4eb4f5, #05a354 50%, #66bef6);
   background-repeat: no-repeat; }
 
 .bg-gradient-radial-info {

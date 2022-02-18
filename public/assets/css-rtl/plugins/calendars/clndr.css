@@ -5,7 +5,7 @@
 }
 .clndr .clndr-controls {
   padding : 14px;
-  background-color : #666EE8;
+  background-color : #339966;
   color : white;
   text-align : center;
 }
@@ -51,7 +51,7 @@
   color : #4F4F4F;
 }
 .clndr .clndr-grid .days .day.event .day-number, .clndr .clndr-grid .days .empty.event .day-number {
-  border : 1px solid #666EE8;
+  border : 1px solid #339966;
   border-radius : 50%;
   padding : 6px 9px;
 }
@@ -64,7 +64,7 @@
   color : white;
 }
 .clndr .clndr-grid .days .today {
-  background-color : #666EE8;
+  background-color : #339966;
   color : white;
   background-image : none;
 }

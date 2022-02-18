@@ -15,7 +15,7 @@ html body.footer-fixed .app-content.content {
   margin-bottom : 3rem;
 }
 html body a {
-  color : #1E9FF2;
+  color : #05a354;
 }
 html body a:hover {
   color : #0C84D1;
@@ -375,7 +375,7 @@ footer .ft-heart:before {
 }
 .main-menu.menu-light .navigation > li.open > a {
   color : #545766;
-  border-left : 4px solid #1E9FF2;
+  border-left : 4px solid #05a354;
 }
 .main-menu.menu-light .navigation > li.open > li.hover > a {
   -webkit-transform : translateX(-12px);
@@ -389,7 +389,7 @@ footer .ft-heart:before {
 }
 .main-menu.menu-light .navigation > li.menu-collapsed-open > a {
   color : #545766;
-  border-left : 4px solid #1E9FF2;
+  border-left : 4px solid #05a354;
 }
 .main-menu.menu-light .navigation > li:not(.open) > ul {
   display : none;
@@ -579,7 +579,7 @@ footer .ft-heart:before {
 }
 .main-menu.menu-dark .navigation > li.open > a {
   color : #C3C3C3;
-  border-left : 4px solid #1E9FF2;
+  border-left : 4px solid #05a354;
 }
 .main-menu.menu-dark .navigation > li.open > li.hover > a {
   -webkit-transform : translateX(-12px);
@@ -593,7 +593,7 @@ footer .ft-heart:before {
 }
 .main-menu.menu-dark .navigation > li.menu-collapsed-open > a {
   color : #C3C3C3;
-  border-left : 4px solid #1E9FF2;
+  border-left : 4px solid #05a354;
 }
 .main-menu.menu-dark .navigation > li:not(.open) > ul {
   display : none;
@@ -3102,7 +3102,7 @@ footer .ft-heart:before {
 }
 
 .fonticon-container:hover i {
-  color : #666EE8;
+  color : #339966;
   font-size : 2.9rem;
   -webkit-transform : scale(1.3);
       -ms-transform : scale(1.3);
@@ -3257,7 +3257,7 @@ footer .ft-heart:before {
 }
 .customizer a.customizer-toggle {
   background : #FFFFFF;
-  color : #666EE8;
+  color : #339966;
   display : block;
   border-radius : 0 15px 15px 0;
 }
@@ -3286,8 +3286,8 @@ footer .ft-heart:before {
   white-space : pre;
 }
 .customizer .customizer-sidebar-options .active {
-  background-color : #666EE8;
-  border-color : #666EE8;
+  background-color : #339966;
+  border-color : #339966;
   color : #FFFFFF;
 }
 
@@ -4584,7 +4584,7 @@ input[type='date'].form-control, input[type='time'].form-control, input[type='da
 }
 
 .floating-label-form-group-with-focus label, .floating-label-form-group-with-value label {
-  color : #666EE8 !important;
+  color : #339966 !important;
   text-transform : uppercase;
   font-weight : 400;
 }
@@ -4628,7 +4628,7 @@ input[type='date'].form-control, input[type='time'].form-control, input[type='da
 .select2-container--classic .select2-selection--multiple .select2-selection__choice, .select2-container--default .select2-selection--multiple .select2-selection__choice {
   padding : 1px 11px  !important;
   margin-top : 0 !important;
-  background-color : #666EE8 !important;
+  background-color : #339966 !important;
   border-color : transparent !important;
   color : #FFFFFF;
   margin-left : 8px !important;
@@ -4658,7 +4658,7 @@ input[type='date'].form-control, input[type='time'].form-control, input[type='da
 }
 
 .select2-container--classic .select2-results__options .select2-results__option[aria-selected=true], .select2-container--default .select2-results__options .select2-results__option[aria-selected=true] {
-  background-color : #666EE8 !important;
+  background-color : #339966 !important;
   color : #FFFFFF !important;
 }
 
@@ -4791,7 +4791,7 @@ table.dataTable tfoot th, .dataTables_wrapper tfoot th {
 }
 
 .content-wrapper table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before, .content-wrapper table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
-  background-color : #666EE8;
+  background-color : #339966;
   border-radius : 0;
   top : 10px;
   right : 10px;
@@ -4857,7 +4857,7 @@ div.dt-buttons {
 
 td.highlight {
   font-weight : bold;
-  color : #666EE8;
+  color : #339966;
   background-color : whitesmoke !important;
 }
 
@@ -4885,12 +4885,12 @@ table.dataTable.compact tbody td {
 }
 
 .table-striped tbody tr.odd.selected, .table-striped tbody tr.even.selected {
-  background-color : #666EE8;
+  background-color : #339966;
   color : #FFFFFF;
 }
 
 table.dataTable tbody > tr > .selected {
-  background-color : #666EE8;
+  background-color : #339966;
   color : #FFFFFF;
 }
 
@@ -4997,7 +4997,7 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   padding : 0.5rem 0.75rem;
   margin-right : -1px;
   line-height : 1.6;
-  color : #1E9FF2;
+  color : #05a354;
   text-decoration : none;
   background-color : #FFFFFF;
   border : none;
@@ -5006,10 +5006,10 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   background-color : #F5F5F5 !important;
 }
 .datepaginator .pagination li a.dp-today, .datepaginator-sm .pagination li a.dp-today, .datepaginator-lg .pagination li a.dp-today {
-  background-color : #1E9FF2 !important;
+  background-color : #05a354 !important;
 }
 .datepaginator .pagination li a.dp-selected, .datepaginator-sm .pagination li a.dp-selected, .datepaginator-lg .pagination li a.dp-selected {
-  background-color : #1E9FF2 !important;
+  background-color : #05a354 !important;
 }
 .datepaginator .pagination li a .dp-divider, .datepaginator-sm .pagination li a .dp-divider, .datepaginator-lg .pagination li a .dp-divider {
   border-right : 2px solid #DDDDDD !important;

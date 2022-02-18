@@ -4,8 +4,8 @@
   color: #fff; }
 
 .bootstraptreeview .list-group .list-group-item.node-colourful-treeview.node-selected .badge {
-  background-color: #666ee8;
-  color: #666ee8; }
+  background-color: #339966;
+  color: #339966; }
 
 .bootstraptreeview .list-group .list-group-item.node-node-override-treeview:last-child .badge, .bootstraptreeview .list-group .list-group-item.node-node-override-treeview.node-selected .badge {
   background-color: #fff;
@@ -19,7 +19,7 @@
   /* Comman badge style inside treeview */
   margin-left: .8rem;
   background-color: #F5F7FA;
-  color: #666ee8; }
+  color: #339966; }
 
 .bootstraptreeview .list-group .list-group-item .icon {
   /* treeview icon alignment and spacing */

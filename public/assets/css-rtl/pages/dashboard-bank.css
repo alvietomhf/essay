@@ -1,10 +1,10 @@
 #scoreLineToDay .ct-series-a .ct-line {
-  stroke : #1E9FF2;
+  stroke : #05a354;
   stroke-width : 5px;
 }
 
 #scoreLineToWeek .ct-series-a .ct-line {
-  stroke : #666EE8;
+  stroke : #339966;
   stroke-width : 5px;
 }
 

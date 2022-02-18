@@ -3,7 +3,7 @@
   width : 100%;
 }
 .selectivity-input .selectivity-multiple-selected-item {
-  background : #1E9FF2;
+  background : #05a354;
   border-color : #0C84D1;
 }
 .selectivity-input[class*=bg-] .selectivity-multiple-selected-item {

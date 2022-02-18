@@ -100,7 +100,7 @@
   background : #F2F4F4;
 }
 .chat-application .chat-sidebar .chat-sidebar-list-wrapper li.active {
-  background : #666EE8;
+  background : #339966;
 }
 .chat-application .chat-sidebar .chat-sidebar-list-wrapper li.active h6, .chat-application .chat-sidebar .chat-sidebar-list-wrapper li.active span {
   color : #FFFFFF !important;
@@ -183,7 +183,7 @@
   clear : both;
   word-break : break-word;
   color : #FFFFFF;
-  background : #666EE8;
+  background : #339966;
   border-radius : 0.25rem;
   box-shadow : 0 2px 4px 0 rgba(102, 110, 232, 0.6);
 }

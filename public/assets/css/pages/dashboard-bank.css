@@ -1,9 +1,9 @@
 #scoreLineToDay .ct-series-a .ct-line {
-  stroke: #1e9ff2;
+  stroke: #05a354;
   stroke-width: 5px; }
 
 #scoreLineToWeek .ct-series-a .ct-line {
-  stroke: #666ee8;
+  stroke: #339966;
   stroke-width: 5px; }
 
 #scoreLineToMonth .ct-series-a .ct-line {

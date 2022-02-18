@@ -23,11 +23,11 @@
 }
 
 .climacon-primary.climacon-lighten-1 .climacon_component-stroke {
-  fill : #7C83EB;
+  fill : #53b885;
 }
 
 .climacon-primary .climacon_component-stroke {
-  fill : #666EE8;
+  fill : #339966;
 }
 
 .climacon-primary .climacon_component-fill {
@@ -39,11 +39,11 @@
 }
 
 .climacon-primary.climacon-darken-2 .climacon_component-stroke {
-  fill : #3A44E1;
+  fill : #3bb377;
 }
 
 .climacon-primary.climacon-darken-3 .climacon_component-stroke {
-  fill : #232FDE;
+  fill : #17663f;
 }
 
 .climacon-primary.climacon-darken-4 .climacon_component-stroke {
@@ -191,7 +191,7 @@
 }
 
 .climacon-info .climacon_component-stroke {
-  fill : #1E9FF2;
+  fill : #05a354;
 }
 
 .climacon-info .climacon_component-fill {

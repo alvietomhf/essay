@@ -49,7 +49,7 @@
             background-color: transparent;
             border-radius: 0.25rem !important; }
             .todo-application .sidebar .todo-sidebar .todo-app-menu .sidebar-menu-list .list-group .list-group-item.active {
-              background-color: #666ee8 !important; }
+              background-color: #339966 !important; }
   .todo-application .todo-new-task-sidebar {
     /* todo-new-task-sidebar */
     height: calc(100vh - 8.3rem);
@@ -118,7 +118,7 @@
         color: #6b6f82 !important; }
       .todo-application .todo-new-task-sidebar .select2-assign-label + .select2-container .select2-selection__rendered .select2-selection__choice[title="Frontend"] {
         background-color: #E2ECFF !important;
-        color: #666ee8 !important; }
+        color: #339966 !important; }
       .todo-application .todo-new-task-sidebar .select2-assign-label + .select2-container .select2-selection__rendered .select2-selection__choice[title="Backend"] {
         background-color: #D2FFE8 !important;
         color: #28d094 !important; }
@@ -130,7 +130,7 @@
         color: #ff9149 !important; }
       .todo-application .todo-new-task-sidebar .select2-assign-label + .select2-container .select2-selection__rendered .select2-selection__choice[title="Wireframe"] {
         background-color: #CCF5F8 !important;
-        color: #1e9ff2 !important; }
+        color: #05a354 !important; }
     .todo-application .todo-new-task-sidebar .snow-container {
       position: relative; }
       .todo-application .todo-new-task-sidebar .snow-container .ql-container.ql-snow {

@@ -34,7 +34,7 @@
 
 .trading-wrapper tr:hover, .trading-wrapper tr.active {
   cursor : pointer;
-  background-color : #1E9FF2;
+  background-color : #05a354;
   color : #FFFFFF;
 }
 .trading-wrapper tr:hover i, .trading-wrapper tr.active i {

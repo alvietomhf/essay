@@ -13,14 +13,14 @@
   padding: 2rem 5.5rem;
   cursor: pointer; }
   .swiper-centered-slides.swiper-container .swiper-slide.swiper-slide-active {
-    border: 2px solid #666ee8; }
+    border: 2px solid #339966; }
     .swiper-centered-slides.swiper-container .swiper-slide.swiper-slide-active i {
-      color: #666ee8; }
+      color: #339966; }
 
 .swiper-centered-slides .swiper-button-next:after,
 .swiper-centered-slides .swiper-button-prev:after {
   border-radius: 50%;
-  background-color: #666ee8;
+  background-color: #339966;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5) !important; }
 
 .swiper-centered-slides-2.swiper-container .swiper-slide {
@@ -31,7 +31,7 @@
   cursor: pointer; }
   .swiper-centered-slides-2.swiper-container .swiper-slide.swiper-slide-active {
     color: #fff;
-    background-color: #666ee8;
+    background-color: #339966;
     box-shadow: 0 3px 6px 0 rgba(102, 110, 232, 0.5) !important; }
 
 /* cube effect */

@@ -28,22 +28,22 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><i class="fa fa-tasks" aria-hidden="true" style="color: #666ee8"></i> Ulangan Harian 1</td>
+                                    <td><i class="fa fa-tasks" aria-hidden="true" style="color: #339966"></i> Ulangan Harian 1</td>
                                     <td class="text-center">2 Jan</td>
                                     <td class="text-center">zxy62</td>
                                 </tr>
                                 <tr>
-                                    <td><i class="fa fa-tasks" aria-hidden="true" style="color: #666ee8"></i> Ulangan Harian 2 (Software Design)</td>
+                                    <td><i class="fa fa-tasks" aria-hidden="true" style="color: #339966"></i> Ulangan Harian 2 (Software Design)</td>
                                     <td class="text-center">29 Jan</td>
                                     <td class="text-center">vgtr2</td>
                                 </tr>
                                 <tr>
-                                    <td><i class="fa fa-tasks" aria-hidden="true" style="color: #666ee8"></i> Ulangan Harian 3</td>
+                                    <td><i class="fa fa-tasks" aria-hidden="true" style="color: #339966"></i> Ulangan Harian 3</td>
                                     <td class="text-center">14 Feb</td>
                                     <td class="text-center">29yh1</td>
                                 </tr>
                                 <tr>
-                                    <td><i class="fa fa-tasks" aria-hidden="true" style="color: #666ee8"></i> Ujian Tengah Semester Genap</td>
+                                    <td><i class="fa fa-tasks" aria-hidden="true" style="color: #339966"></i> Ujian Tengah Semester Genap</td>
                                     <td class="text-center">1 Mar</td>
                                     <td class="text-center">6jih9</td>
                                 </tr>
