@@ -51,7 +51,7 @@ $(window).on('load', function() {
             var _stroke = ctx.stroke;
             ctx.stroke = function() {
                 ctx.save();
-                ctx.shadowColor = '#05a354';
+                ctx.shadowColor = '#11d171';
                 ctx.shadowBlur = 30;
                 ctx.shadowOffsetX = 0;
                 ctx.shadowOffsetY = 20;
@@ -70,11 +70,11 @@ $(window).on('load', function() {
             datasets: [{
                 data: [5000, 10000, 4000, 14500, 8000, 18500, 8000, 20000],
                 borderWidth: 4,
-                borderColor: '#05a354',
+                borderColor: '#11d171',
                 pointBackgroundColor: "#FFF",
-                pointBorderColor: "#05a354",
+                pointBorderColor: "#11d171",
                 pointHoverBackgroundColor: "#FFF",
-                pointHoverBorderColor: "#05a354",
+                pointHoverBorderColor: "#11d171",
                 pointRadius: 0,
                 pointHoverRadius: 6,
                 fill: false,

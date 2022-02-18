@@ -95,7 +95,7 @@
                                                 </div>
                                                 <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a href="javascript:void(0);" class="card-link">Lupa Password?</a></div>
                                             </div>
-                                            <button type="submit" class="btn btn-info btn-block">Masuk</button>
+                                            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
                                         </form>
                                     </div>
                                     <p class="card-subtitle text-muted text-center font-small-3 mx-2"><span><a href="{{ route('student.code') }}">Saya Peserta Ujian</a></span></p>

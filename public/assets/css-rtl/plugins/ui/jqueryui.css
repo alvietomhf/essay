@@ -15,11 +15,11 @@
   display : inline-block;
 }
 .jqueryui-ele-container .ui-selectable .ui-selecting {
-  background : #05a354;
+  background : #11d171;
   color : white;
 }
 .jqueryui-ele-container .ui-selectable .ui-selected {
-  background : #05a354;
+  background : #11d171;
   color : white;
 }
 
@@ -73,8 +73,8 @@
 .ui-accordion .ui-accordion-header.ui-accordion-header-active {
   border-bottom-left-radius : 0;
   border-bottom-right-radius : 0;
-  border-bottom : 2px solid #05a354;
-  color : #05a354;
+  border-bottom : 2px solid #11d171;
+  color : #11d171;
 }
 
 .ui-accordion .ui-corner-top, .ui-accordion .ui-corner-all {
@@ -159,7 +159,7 @@
 }
 .ui-menu .ui-state-active {
   border : none;
-  background : #05a354;
+  background : #11d171;
   margin : 0;
 }
 .ui-menu .ui-state-active .ui-icon {
@@ -239,7 +239,7 @@
 }
 
 .ui-tabs .ui-state-active .ui-tabs-anchor {
-  background : #05a354;
+  background : #11d171;
   color : #FFFFFF;
 }
 
@@ -253,7 +253,7 @@
 }
 
 .dp-skin .ui-widget {
-  background : #05a354;
+  background : #11d171;
   border : none;
           border-radius : 0;
   -webkit-border-radius : 0;
@@ -384,7 +384,7 @@ select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
 }
 .ui-autocomplete .ui-state-active, .ui-autocomplete .ui-widget-content .ui-state-active {
   border : none;
-  background : #05a354;
+  background : #11d171;
 }
 .ui-autocomplete .ui-autocomplete-category {
   padding : 8px 10px;
@@ -436,8 +436,8 @@ select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
 }
 
 .ui-button:active, a.ui-button:active {
-  border : 1px solid #0C84D1;
-  background : #05a354;
+  border : 1px solid #14b564;
+  background : #11d171;
 }
 
 .ui-button.btn-primary, .ui-button.btn-success, .ui-button.btn-warning, .ui-button.btn-danger, .ui-button.btn-info, a.ui-button.btn-primary, a.ui-button.btn-success, a.ui-button.btn-warning, a.ui-button.btn-danger, a.ui-button.btn-info {
@@ -463,7 +463,7 @@ a.ui-button-link {
   background-color : transparent;
 }
 a.ui-button-link:hover {
-  color : #05a354;
+  color : #11d171;
   border : none;
   background-color : transparent;
   text-decoration : none;
@@ -471,16 +471,16 @@ a.ui-button-link:hover {
 
 .ui-checkboxradio-label.ui-state-active {
   color : #FFFFFF;
-  border : 1px solid #05a354;
-  background : #05a354;
+  border : 1px solid #11d171;
+  background : #11d171;
 }
 .ui-checkboxradio-label.ui-state-active:hover {
   color : #FFFFFF;
-  border : 1px solid #05a354;
-  background : #05a354;
+  border : 1px solid #11d171;
+  background : #11d171;
 }
 .ui-checkboxradio-label.ui-state-active .ui-icon-background {
-  border : 4px solid #0C84D1;
+  border : 4px solid #14b564;
 }
 
 .ui-checkboxradio-label.ui-checkboxradio-checked .ui-icon, .ui-checkboxradio-label.ui-checkboxradio-checked:hover .ui-icon {
@@ -810,11 +810,11 @@ a.ui-button-link:hover {
 }
 
 .ui-slider-primary .ui-slider-handle, .ui-slider-primary .ui-slider-range, .ui-slider-primary .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line, .ui-slider-primary .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
-  background-color : #05a354;
+  background-color : #11d171;
 }
 
 .ui-slider-info .ui-slider-handle, .ui-slider-info .ui-slider-range, .ui-slider-info .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line, .ui-slider-info .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
-  background-color : #05a354;
+  background-color : #11d171;
 }
 
 .ui-slider-success .ui-slider-handle, .ui-slider-success .ui-slider-range, .ui-slider-success .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line, .ui-slider-success .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
@@ -837,7 +837,7 @@ a.ui-button-link:hover {
   background : #D7E0EA;
 }
 .ui-progressbar .ui-progressbar-value {
-  background : #05a354;
+  background : #11d171;
   margin : 0;
   background-size : 60px 60px;
   -webkit-transition : width 0.4s ease-in-out;
@@ -879,7 +879,7 @@ a.ui-button-link:hover {
   background : #D7E0EA;
 }
 .ui-progressbar-indeterminate .ui-progressbar-value {
-  background : #05a354;
+  background : #11d171;
   margin : 0;
   background-size : 60px 60px;
   -webkit-transition : width 0.4s ease-in-out;
@@ -915,8 +915,8 @@ a.ui-button-link:hover {
 }
 .ui-dialog .ui-button {
   color : #FFFFFF;
-  background-color : #05a354;
-  border-color : #05a354;
+  background-color : #11d171;
+  border-color : #11d171;
 }
 .ui-dialog .ui-icon-closethick:after {
   position : absolute;

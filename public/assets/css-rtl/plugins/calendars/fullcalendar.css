@@ -121,25 +121,25 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-info {
   color : #FFFFFF;
-  background-color : #05a354;
-  border-color : #05a354;
+  background-color : #11d171;
+  border-color : #11d171;
 }
 .btn-info:hover {
   color : #FFFFFF;
   background-color : #0D8BDD;
-  border-color : #0C84D1;
+  border-color : #14b564;
 }
 .btn-info:focus, .btn-info.focus {
   box-shadow : 0 0 0 0.2rem rgba(64, 173, 244, 0.5);
 }
 .btn-info.disabled, .btn-info:disabled {
   color : #FFFFFF;
-  background-color : #05a354;
-  border-color : #05a354;
+  background-color : #11d171;
+  border-color : #11d171;
 }
 .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active, .show > .btn-info.dropdown-toggle {
   color : #FFFFFF;
-  background-color : #0C84D1;
+  background-color : #14b564;
   border-color : #0B7CC5;
 }
 .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus, .show > .btn-info.dropdown-toggle:focus {
@@ -330,25 +330,25 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-outline-info {
-  color : #05a354;
-  border-color : #05a354;
+  color : #11d171;
+  border-color : #11d171;
 }
 .btn-outline-info:hover {
   color : #FFFFFF;
-  background-color : #05a354;
-  border-color : #05a354;
+  background-color : #11d171;
+  border-color : #11d171;
 }
 .btn-outline-info:focus, .btn-outline-info.focus {
   box-shadow : 0 0 0 0.2rem rgba(30, 159, 242, 0.5);
 }
 .btn-outline-info.disabled, .btn-outline-info:disabled {
-  color : #05a354;
+  color : #11d171;
   background-color : transparent;
 }
 .btn-outline-info:not(:disabled):not(.disabled):active, .btn-outline-info:not(:disabled):not(.disabled).active, .show > .btn-outline-info.dropdown-toggle {
   color : #FFFFFF;
-  background-color : #05a354;
-  border-color : #05a354;
+  background-color : #11d171;
+  border-color : #11d171;
 }
 .btn-outline-info:not(:disabled):not(.disabled):active:focus, .btn-outline-info:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-info.dropdown-toggle:focus {
   box-shadow : 0 0 0 0.2rem rgba(30, 159, 242, 0.5);

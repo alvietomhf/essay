@@ -259,56 +259,56 @@
     background-color: #28d094 !important; }
 
 .loader-info div {
-  background-color: #05a354 !important; }
+  background-color: #11d171 !important; }
 
 .loader-info.ball-clip-rotate div {
-  border-color: #05a354 !important;
+  border-color: #11d171 !important;
   border-bottom-color: transparent !important;
   background-color: transparent !important; }
 
 .loader-info.ball-clip-rotate-pulse div:first-child {
-  background: #05a354 !important; }
+  background: #11d171 !important; }
 
 .loader-info.ball-clip-rotate-pulse div:last-child {
   background: transparent !important;
-  border-color: #05a354 transparent #05a354 transparent !important; }
+  border-color: #11d171 transparent #11d171 transparent !important; }
 
 .loader-info.ball-clip-rotate-multiple div {
   background-color: transparent !important;
-  border-color: transparent #05a354 transparent #05a354 !important; }
+  border-color: transparent #11d171 transparent #11d171 !important; }
 
 .loader-info.ball-rotate div:before, .loader-info.ball-rotate div:after {
-  background-color: #05a354 !important; }
+  background-color: #11d171 !important; }
 
 .loader-info.ball-triangle-path div {
   background-color: transparent !important;
-  border-color: #05a354 !important; }
+  border-color: #11d171 !important; }
 
 .loader-info.ball-scale-ripple div {
   background-color: transparent !important;
-  border-color: #05a354 !important; }
+  border-color: #11d171 !important; }
 
 .loader-info.ball-scale-ripple-multiple div {
   background-color: transparent !important;
-  border-color: #05a354 !important; }
+  border-color: #11d171 !important; }
 
 .loader-info.triangle-skew-spin div {
   background-color: transparent !important;
-  border-bottom-color: #05a354 !important; }
+  border-bottom-color: #11d171 !important; }
 
 .loader-info.semi-circle-spin div {
-  background-image: linear-gradient(transparent 0%, transparent 70%, #05a354 30%, #05a354 100%);
+  background-image: linear-gradient(transparent 0%, transparent 70%, #11d171 30%, #11d171 100%);
   background-color: transparent !important; }
 
 .loader-info.fading-circle div {
   background-color: transparent !important; }
   .loader-info.fading-circle div:before {
-    background-color: #05a354 !important; }
+    background-color: #11d171 !important; }
 
 .loader-info.folding-cube div {
   background-color: transparent !important; }
   .loader-info.folding-cube div:before {
-    background-color: #05a354 !important; }
+    background-color: #11d171 !important; }
 
 .loader-warning div {
   background-color: #ff9149 !important; }

@@ -395,7 +395,7 @@ body.vertical-layout.vertical-menu-modern.menu-collapsed.menu-flipped .footer {
 .vertical-collapsed-menu .collapsed-active::before {
   content: "";
   position: absolute;
-  border-right: 4px solid #05a354;
+  border-right: 4px solid #11d171;
   right: 0px;
   top: 0px;
   height: 43px; }

@@ -95,7 +95,7 @@
         float: right;
         padding-right: 1rem; }
       .sidebar-shop .sidebar-list ul li a:hover {
-        color: #05a354; }
+        color: #11d171; }
   .sidebar-shop .sidebar-list.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
     width: 5px; }
   .sidebar-shop .sidebar-list .skin label {
@@ -140,7 +140,7 @@
     text-align: center;
     width: 34px; }
   .size-filter ul li.active a {
-    background: #05a354;
+    background: #11d171;
     color: #fff; }
 
 .product-img {
@@ -182,7 +182,7 @@
   color: #6b6f82;
   margin-right: 1rem; }
   .product-shop .display-buttons a.active, .product-shop .display-buttons a:hover {
-    color: #05a354; }
+    color: #11d171; }
 
 .product-shop .shop-title {
   text-transform: uppercase;
@@ -221,7 +221,7 @@
     margin-top: 0.5rem; }
     .product-detail .price-reviews .price-box .price {
       font-weight: 500;
-      color: #05a354; }
+      color: #11d171; }
 
 .product-detail .product-info {
   margin-bottom: 1.25rem; }

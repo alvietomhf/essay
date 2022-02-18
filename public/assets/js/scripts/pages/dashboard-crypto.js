@@ -215,9 +215,9 @@
         label: "XRP",
         data: [70, 20, 35, 60, 20, 40, 30],
         backgroundColor: blue_trans_gradient,
-        borderColor: "#05a354",
+        borderColor: "#11d171",
         borderWidth: 1.5,
-        strokeColor: "#05a354",
+        strokeColor: "#11d171",
         pointRadius: 0
       }
     ]

@@ -72,7 +72,7 @@
                                                 @enderror
                                                 <p class="text-center mt-1">Tanyakan kepada Guru Pengajar apabila belum mendapatkan kode Ujian</p>
                                             </fieldset>
-                                            <button type="submit" class="btn btn-info btn-block mt-n2">Masuk</button>
+                                            <button type="submit" class="btn btn-primary btn-block mt-n2">Masuk</button>
                                         </form>
                                     </div>
                                     <p class="card-subtitle text-muted text-center font-small-3 mx-2"><span><a href="{{ route('login') }}">Masuk sebagai Guru</a></span></p>

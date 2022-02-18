@@ -128,7 +128,7 @@
   padding-left : 1rem;
 }
 .sidebar-shop .sidebar-list ul li a:hover {
-  color : #05a354;
+  color : #11d171;
 }
 .sidebar-shop .sidebar-list.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
   width : 5px;
@@ -183,7 +183,7 @@
   width : 34px;
 }
 .size-filter ul li.active a {
-  background : #05a354;
+  background : #11d171;
   color : #FFFFFF;
 }
 
@@ -237,7 +237,7 @@
   margin-left : 1rem;
 }
 .product-shop .display-buttons a.active, .product-shop .display-buttons a:hover {
-  color : #05a354;
+  color : #11d171;
 }
 
 .product-shop .shop-title {
@@ -288,7 +288,7 @@
 }
 .product-detail .price-reviews .price-box .price {
   font-weight : 500;
-  color : #05a354;
+  color : #11d171;
 }
 
 .product-detail .product-info {

@@ -65,7 +65,7 @@
 }
 
 .table-wrapper .ac-symbol.current i {
-  color : #05a354;
+  color : #11d171;
 }
 
 .table-wrapper.dataTable td {
@@ -96,7 +96,7 @@
 .wallet-wrapper .transact {
   text-transform : uppercase;
   font-size : 0.8rem;
-  color : #05a354;
+  color : #11d171;
   font-weight : bold;
 }
 .wallet-wrapper .transact i:before {
@@ -144,7 +144,7 @@
 }
 
 .customer-wrapper .email i {
-  color : #05a354;
+  color : #11d171;
 }
 
 .customer-wrapper .tickets i {
@@ -158,27 +158,27 @@
 }
 
 .wizard-info.wizard.wizard-notification .steps ul li:before, .wizard-info.wizard.wizard-notification .steps ul li:after {
-  background-color : #05a354;
+  background-color : #11d171;
 }
 
 .wizard-info.wizard.wizard-notification .steps ul li.current .step {
-  border : 2px solid #05a354;
-  color : #05a354;
+  border : 2px solid #11d171;
+  color : #11d171;
   line-height : 36px;
 }
 .wizard-info.wizard.wizard-notification .steps ul li.current .step:after {
-  border-top-color : #05a354;
+  border-top-color : #11d171;
 }
 
 .wizard-info.wizard.wizard-notification .steps ul li.done .step {
-  background-color : #05a354;
-  border-color : #05a354;
+  background-color : #11d171;
+  border-color : #11d171;
 }
 .wizard-info.wizard.wizard-notification .steps ul li.done .step:last-child {
   color : #FFFFFF;
 }
 .wizard-info.wizard.wizard-notification .steps ul li.done .step:after {
-  border-top-color : #05a354;
+  border-top-color : #11d171;
 }
 
 .material-vertical-layout #faq-search input.form-control, .material-vertical-layout #knowledge-search input.form-control, .material-horizontal-layout #faq-search input.form-control, .material-horizontal-layout #knowledge-search input.form-control {

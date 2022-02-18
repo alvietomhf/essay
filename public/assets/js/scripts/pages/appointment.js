@@ -63,7 +63,7 @@ $(window).on("load", function(){
             borderColor: "rgb(30,159,242)",
             backgroundColor: "transparent",
             borderWidth: 2,
-            pointBorderColor: "#05a354",
+            pointBorderColor: "#11d171",
             pointBackgroundColor: "#FFF",
             pointBorderWidth: 2,
             pointHoverBorderWidth: 2,

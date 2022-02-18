@@ -9,7 +9,7 @@
 var $primary = "#339966",
   $secondary = "#6B6F82",
   $success = "#1C9066",
-  $info = "#05a354",
+  $info = "#11d171",
   $warning = "#FF9149",
   $danger = "#FF4961";
 

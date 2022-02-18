@@ -17,8 +17,8 @@
 }
 
 .bootstrap-switch .bootstrap-switch-container .bootstrap-switch-handle-on.bootstrap-switch-info, .bootstrap-switch .bootstrap-switch-container .bootstrap-switch-handle-off.bootstrap-switch-info {
-  background-image : -webkit-linear-gradient(top, #0C84D1 0%, #36A9F3 100%);
-  background-image :         linear-gradient(to bottom, #0C84D1 0%, #36A9F3 100%);
+  background-image : -webkit-linear-gradient(top, #14b564 0%, #36A9F3 100%);
+  background-image :         linear-gradient(to bottom, #14b564 0%, #36A9F3 100%);
   background-repeat : repeat-x;
 }
 
