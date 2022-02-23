@@ -6,11 +6,30 @@
             </li>
             @else
             @php
-            $data = \App\Models\ClasSubject::where('user_id', auth()->user()->id)->with(['clas', 'subject'])->get();
+            $data = \App\Models\Season::with(['clasSubjects' => function ($q) {
+                                    $q->with([
+                                        'clas',
+                                        'subject'
+                                    ]);
+                                }])
+                                ->withCount(['clasSubjects'])
+                                ->get();
             @endphp
             @foreach ($data as $key => $value)
-            <li class=" nav-item"><a href="{{ route('kelas-mapel.show', [$value->id]) }}"><i class="fa fa-square" style="color: {{ $value->color ?? '#339966' }}"></i><span class="menu-kelas" data-i18n="Kelas">{{ $value->clas->name }} - {{ $value->subject->name == 'Teknologi Informasi & Komunikasi' ? 'TIK' : $value->subject->name }}</span></a>
-            </li>    
+            @if ($value->clas_subjects_count)
+            <li class=" nav-item"><a href="javascript:void(0);"><span class="menu-title text-bold-700" data-i18n="Templates">TP. {{ $value->name }}</span></a>
+                <ul class="menu-content">
+                    @foreach ($value->clasSubjects as $key => $value)
+                    <li><a class="menu-item" href="javascript:void(0);"><i class="fa fa-square" style="color: {{ $value->color }}"></i><span class="text-bold-700" data-i18n="Vertical"> {{ $value->clas->name }} - {{ $value->subject->name == 'Teknologi Informasi & Komunikasi' ? 'TIK' : $value->subject->name }}</span></a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="javascript:void(0);"><i class="fa fa-tasks" aria-hidden="true" style="color: #339966"></i><span class="text-bold-700" data-i18n="Classic Menu"> Ulangan Harian 1</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    @endforeach
+                </ul>
+            </li>
+            @endif  
             @endforeach
             @endrole
         </ul>

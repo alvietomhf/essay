@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Clas;
 use App\Models\ClasSubject;
+use App\Models\Season;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 
@@ -28,8 +29,9 @@ class ClasSubjectController extends Controller
     {
         $clas = Clas::all();
         $subject = Subject::all();
+        $season = Season::all();
 
-        return view('class_subject.create', compact('clas', 'subject'));
+        return view('class_subject.create', compact('clas', 'subject', 'season'));
     }
 
     /**
@@ -41,10 +43,12 @@ class ClasSubjectController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        $color = ['#EAC4D5', '#FFC09F', '#FFEE93', '#33CC99', '#99CCCC', '#809BCE'];
 
         $data = ClasSubject::where([
                     ['clas_id', '=', $request->clas_id],
                     ['subject_id', '=', $request->subject_id],
+                    ['season_id', '=', $request->season_id],
                 ])
                 ->first();
         
@@ -57,6 +61,7 @@ class ClasSubjectController extends Controller
             $input,
             [
             'user_id' => auth()->user()->id,
+            'color' => $request->color ?? $color[array_rand($color)],
             ]
         ));
 
@@ -86,7 +91,13 @@ class ClasSubjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $clas = Clas::all();
+        $subject = Subject::all();
+        $season = Season::all();
+
+        $data = ClasSubject::where('id', $id)->first();
+
+        return view('class_subject.edit', compact('data', 'clas', 'subject', 'season'));
     }
 
     /**
@@ -98,7 +109,26 @@ class ClasSubjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $clasSubject = ClasSubject::find($id);
+        $input = $request->all();
+
+        $data = ClasSubject::where([
+                    ['clas_id', '=', $request->clas_id],
+                    ['subject_id', '=', $request->subject_id],
+                    ['season_id', '=', $request->season_id],
+                ])
+                ->first();
+
+        if (isset($data) && $data->id != $id) {
+            flash('Gagal mengubah. Kelas tersebut sudah dibuat!')->error();
+            return redirect()->route('kelas-mapel.show', [$id]);
+        }
+
+        $clasSubject->update($input);
+
+        flash('Berhasil mengedit kelas')->success();
+
+        return redirect()->route('kelas-mapel.show', [$id]);
     }
 
     /**
@@ -109,6 +139,27 @@ class ClasSubjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $clasSubject = ClasSubject::find($id);
+            if (!$clasSubject) {
+                return response()->json([
+                        'status' => false,
+                        'message' => 'Data not found',
+                ], 404);
+            }
+
+            $clasSubject->delete();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Berhasil menghapus kelas',
+                'url' => route('dashboard'),
+            ]);
+        } catch(\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Gagal menghapus kelas',
+            ]);
+        }
     }
 }

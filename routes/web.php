@@ -4,6 +4,7 @@ use App\Http\Controllers\ClasController;
 use App\Http\Controllers\ClasSubjectController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
@@ -40,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('kelas', ClasController::class);
         Route::resource('mapel', SubjectController::class);
         Route::resource('guru', TeacherController::class);
+        Route::resource('tapel', SeasonController::class);
     });
 
     Route::resource('kelas-mapel', ClasSubjectController::class);

@@ -17,26 +17,30 @@ class ClasSubjectSeeder extends Seeder
         ClasSubject::create([
             'clas_id' => 1,
             'subject_id' => 1,
+            'season_id' => 1,
             'user_id' => 2,
-            'color' => '#09ff00',
+            'color' => '#EAC4D5',
         ]);
         ClasSubject::create([
             'clas_id' => 2,
             'subject_id' => 1,
+            'season_id' => 1,
             'user_id' => 2,
-            'color' => '#ff0800',
+            'color' => '#FFC09F',
         ]);
         ClasSubject::create([
             'clas_id' => 3,
             'subject_id' => 1,
+            'season_id' => 1,
             'user_id' => 2,
-            'color' => '#ffff00',
+            'color' => '#FFEE93',
         ]);
         ClasSubject::create([
             'clas_id' => 4,
             'subject_id' => 1,
+            'season_id' => 1,
             'user_id' => 2,
-            'color' => '#9c7c91',
+            'color' => '#33CC99',
         ]);
     }
 }

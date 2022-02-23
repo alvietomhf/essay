@@ -1,4 +1,4 @@
-<nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-dark bg-primary navbar-shadow navbar-brand-center">
+<nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-dark navbar-shadow navbar-brand-center" style="background-color: @yield('header-color', '#339966 ')">
     <div class="navbar-wrapper">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
@@ -17,9 +17,12 @@
                     <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link btn-modal" id="dropdown-flag"  href="javascript:void(0);" data-href="{{ route('kelas-mapel.create') }}" data-container=".app-modal" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus fa-lg"></i></a>
                     </li>
                     @endif
+                    @if (auth()->user()->hasRole('teacher') && request()->is('kelas-mapel/*'))
+                    @yield('header-clas')
+                    @endif
                     <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="avatar avatar-online"><img src="{{ auth()->user()->avatar ? asset('storage/images/' . auth()->user()->avatar) : asset('assets/images/profile.png') }}" alt="avatar"><i></i></span></a>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{ route('profile.index') }}"><i class="ft-user"></i> Edit Profile</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="javascript:void(0)" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="ft-power"></i> Logout</a>
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{ route('profile.index') }}"><i class="fa fa-user"></i> Edit Profile</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item" href="javascript:void(0)" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> Logout</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
