@@ -17,4 +17,9 @@ class Season extends Model
     {
         return $this->hasMany(ClasSubject::class)->where('user_id', auth()->user()->id);
     }
+
+    public function clasSubjectsAll()
+    {
+        return $this->hasMany(ClasSubject::class);
+    }
 }

@@ -42,6 +42,15 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('mapel', SubjectController::class);
         Route::resource('guru', TeacherController::class);
         Route::resource('tapel', SeasonController::class);
+        Route::group(['prefix' => 'kelas-siswa', 'as' => 'kelas-siswa.'], function() {
+            Route::get('/', [StudentController::class, 'clas'])->name('clas');
+            Route::get('{kelasId}', [StudentController::class, 'index'])->name('index');
+            Route::get('{kelasId}/siswa/create', [StudentController::class, 'create'])->name('create');
+            Route::get('{kelasId}/siswa/{id}/edit', [StudentController::class, 'edit'])->name('edit');
+            Route::post('{kelasId}/siswa', [StudentController::class, 'store'])->name('store');
+            Route::put('{kelasId}/siswa/{id}', [StudentController::class, 'update'])->name('update');
+            Route::delete('{kelasId}/siswa/{id}', [StudentController::class, 'destroy'])->name('destroy');
+        });
     });
 
     Route::resource('kelas-mapel', ClasSubjectController::class);
