@@ -55,18 +55,25 @@
                             <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
                                 <div class="card-header border-0">
                                     <div class="card-title text-center">
-                                        <img src="{{ asset('assets/images/logo/logo-dark.png') }}" alt="branding logo">
+                                        <img src="{{ asset('assets/images/logo/logo-ma.png') }}" style="width: 40%;height: 40%;object-fit: scale-down;" alt="branding logo">
                                     </div>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form-horizontal" action="#" method="POST">
+                                        <form class="form-horizontal" action="javascript:myFunction(); return false;" method="POST">
                                             @csrf
                                             <fieldset class="form-group">
                                                 <input
                                                 oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
                                                 oninput="this.setCustomValidity('')"
-                                                type="text" class="form-control @error('username') is-invalid @enderror" id="code" name="code" placeholder="Kode Ujian" value="{{ old('code') }}" style="text-align: center;" required autofocus>
+                                                type="text" class="form-control @error('number') is-invalid @enderror mb-1" id="number" name="number" placeholder="Nomor Ujian" value="{{ old('number') }}" style="text-align: center;" required autofocus>
+                                                @error('number')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                                <input
+                                                oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
+                                                oninput="this.setCustomValidity('')"
+                                                type="text" class="form-control @error('code') is-invalid @enderror" id="code" name="code" placeholder="Kode Ujian" value="{{ old('code') }}" style="text-align: center;" required autofocus>
                                                 @error('code')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror

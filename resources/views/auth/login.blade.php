@@ -55,50 +55,61 @@
                             <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
                                 <div class="card-header border-0">
                                     <div class="card-title text-center">
-                                        <img src="{{ asset('assets/images/logo/logo-dark.png') }}" alt="branding logo">
+                                        <img src="{{ asset('assets/images/logo/logo-ma.png') }}" style="width: 40%;height: 40%;object-fit: scale-down;" alt="branding logo">
                                     </div>
                                 </div>
                                 <div class="card-content">
-                                    <div class="card-body">
-                                        <form class="form-horizontal" action="{{ route('login') }}" method="POST">
-                                            @csrf
-                                            <fieldset class="form-group position-relative has-icon-left">
-                                                <input
-                                                oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
-                                                oninput="this.setCustomValidity('')"
-                                                type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Username" value="{{ old('username') }}" required autocomplete="username" autofocus>
-                                                <div class="form-control-position">
-                                                    <i class="la la-user"></i>
-                                                </div>
-                                                @error('username')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
-                                            </fieldset>
-                                            <fieldset class="form-group position-relative has-icon-left">
-                                                <input
+                                    <div id="login">
+                                        <div class="card-body">
+                                            <form class="form-horizontal" action="{{ route('login') }}" method="POST">
+                                                @csrf
+                                                <fieldset class="form-group position-relative has-icon-left">
+                                                    <input
                                                     oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
                                                     oninput="this.setCustomValidity('')"
-                                                    type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password" required autocomplete="password">
-                                                <div class="form-control-position">
-                                                    <i class="la la-key"></i>
+                                                    type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                                    <div class="form-control-position">
+                                                        <i class="la la-user"></i>
+                                                    </div>
+                                                    @error('username')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </fieldset>
+                                                <fieldset class="form-group position-relative has-icon-left">
+                                                    <input
+                                                        oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
+                                                        oninput="this.setCustomValidity('')"
+                                                        type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password" required autocomplete="password">
+                                                    <div class="form-control-position">
+                                                        <i class="la la-key"></i>
+                                                    </div>
+                                                    @error('password')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </fieldset>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 col-12 text-center text-sm-left pr-0">
+                                                        <fieldset>
+                                                            <input type="checkbox" id="remember-me" class="chk-remember">
+                                                            <label for="remember-me"> Ingat Saya</label>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a id="btnforgot" href="javascript:void(0);" class="card-link" onclick="onClickForgot(this)">Lupa Password?</a></div>
                                                 </div>
-                                                @error('password')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
-                                            </fieldset>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6 col-12 text-center text-sm-left pr-0">
-                                                    <fieldset>
-                                                        <input type="checkbox" id="remember-me" class="chk-remember">
-                                                        <label for="remember-me"> Ingat Saya</label>
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a href="javascript:void(0);" class="card-link">Lupa Password?</a></div>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
-                                        </form>
+                                                <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+                                            </form>
+                                        </div>
+                                        <p class="card-subtitle text-muted text-center font-small-3 mx-2"><span><a href="{{ route('student.code') }}">Saya Peserta Ujian</a></span></p>
                                     </div>
-                                    <p class="card-subtitle text-muted text-center font-small-3 mx-2"><span><a href="{{ route('student.code') }}">Saya Peserta Ujian</a></span></p>
+                                    <div id="forgot" style="display: none;">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h4 class="text-bold-700 font-italic">Lupa Password?</h4>
+                                                <h4 class="font-italic">Silahkan Hubungi Administrator untuk Informasi Lebih Lanjut</h4>
+                                            </div>
+                                        </div>
+                                        <p class="card-subtitle text-muted text-center font-small-3 mx-2"><span><a id="btnlogin" href="javascript:void(0);" onclick="onClickLogin(this)">Masuk sebagai Guru</a></span></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -126,6 +137,16 @@
     <!-- BEGIN: Page JS-->
     <!-- END: Page JS-->
 
+    <script>
+        function onClickForgot(e) {
+            document.getElementById('login').style.display = 'none'
+            document.getElementById('forgot').style.display = 'block'
+        }
+        function onClickLogin(e) {
+            document.getElementById('forgot').style.display = 'none'
+            document.getElementById('login').style.display = 'block'
+        }
+    </script>
 </body>
 <!-- END: Body-->
 

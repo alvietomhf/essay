@@ -39,7 +39,7 @@
         <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url()->previous() }}" style="color: grey"><i class="fa fa-arrow-left"></i> Kembali</a>
+                    <li class="breadcrumb-item"><a href="{{ route('kelas-mapel.show', [$data->clasSubject->id]) }}" style="color: grey"><i class="fa fa-arrow-left"></i> Kembali</a>
                     </li>
                 </ol>
             </div>
