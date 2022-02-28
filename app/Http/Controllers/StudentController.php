@@ -142,7 +142,7 @@ class StudentController extends Controller
         } catch(\Exception $e) {
             return response()->json([
                 'status' => false,
-                'message' => 'Gagal menghapus guru',
+                'message' => 'Gagal menghapus siswa',
             ]);
         }
     }

@@ -18,16 +18,18 @@
 @endsection
 
 @section('content')
-{{-- <div class="row match-height">
+@if ($examsCount == 0)
+<div class="row match-height">
     <div class="col-12" style="height: 75vh">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-center">
                 <h1>Belum ada ujian yang dibuat, silahkan buat ujian baru</h1>
-            <a class="btn btn-primary btn-modal" href="javascript:void(0);" data-href="{{ route('kelas-mapel.create') }}" data-container=".app-modal">Buat Ujian</a>
+            <a class="btn btn-primary btn-modal" href="javascript:void(0);" data-href="{{ route('ujian.create', [$data->id]) }}" data-container=".app-modal">Buat Ujian</a>
             </div>
         </div>
     </div>
-</div> --}}
+</div>
+@else
 <div class="row d-flex justify-content-center">
     <div class="col-10">
         @include('flash::message')
@@ -45,34 +47,55 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($exams as $key => $value)
                                     <tr>
-                                        <td><i class="fa fa-tasks" aria-hidden="true" style="color: #339966"></i> Ulangan Harian 1</td>
-                                        <td class="text-center">2 Jan</td>
-                                        <td class="text-center">zxy62</td>
+                                        <td><i class="fa fa-tasks" aria-hidden="true" style="color: #339966"></i><a href="{{ route('ujian.show', [$data->id, $value->slug]) }}" style="color: grey;"> {{ $value->title }} {{ $value->description ? '('.$value->description.')' : '' }}</a></td>
+                                        <td class="text-center">{{ $value->updated_at ?? '' }}</td>
+                                        <td class="text-center">{{ $value->code }}</td>
                                     </tr>
-                                    <tr>
-                                        <td><i class="fa fa-tasks" aria-hidden="true" style="color: #339966"></i> Ulangan Harian 2 (Software Design)</td>
-                                        <td class="text-center">29 Jan</td>
-                                        <td class="text-center">vgtr2</td>
-                                    </tr>
-                                    <tr>
-                                        <td><i class="fa fa-tasks" aria-hidden="true" style="color: #339966"></i> Ulangan Harian 3</td>
-                                        <td class="text-center">14 Feb</td>
-                                        <td class="text-center">29yh1</td>
-                                    </tr>
-                                    <tr>
-                                        <td><i class="fa fa-tasks" aria-hidden="true" style="color: #339966"></i> Ujian Tengah Semester Genap</td>
-                                        <td class="text-center">1 Mar</td>
-                                        <td class="text-center">6jih9</td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
                 </div>
             </div>
         </div>
-        <a data-href="{{ route('kelas-mapel.create') }}" data-container=".app-modal" style="float: right;"><i class="fa fa-plus fa-2x"></i></a>
+        <a class="btn-modal" data-href="{{ route('ujian.create', [$data->id]) }}" data-container=".app-modal" style="float: right;"><i class="fa fa-plus fa-2x"></i></a>
     </div>
 </div>
+@endif
 <div class="modal app-modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true"></div>
+@endsection
+
+@section('js')
+<script>
+    $(document).ready(function () {
+        // Store
+        $(document).on('submit', '#create-exam', function(e) {
+            e.preventDefault()
+            const data = $(this).serialize()
+            $(document).find('small.text-error').remove()
+
+            $.ajax({
+                url: $(this).data('action'),
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: data,
+                dataType: 'json',
+                success: function (res) {
+                    if (res.status) {
+                        window.location.href = res.url
+                    }
+                },
+                error: function (res) {
+                    $.each(res.responseJSON.data, function(key, error) {
+                        $(document).find(`[name=${key}]`).after(`<small class="text-danger text-error">${error}</small>`)
+                    })
+                },
+            })
+        })
+    })
+</script>
 @endsection

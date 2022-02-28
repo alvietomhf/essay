@@ -150,7 +150,172 @@
                     })
                 }
             })
-        });
+        })
+        $('.btn-change').on('click', function(e) {
+            var btn = $(this);
+            const message = btn.data('message')
+            const confirm = btn.data('confirm')
+            const value = btn.data('value')
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 1000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            e.stopPropagation();
+            Swal.fire({
+                title: 'Anda yakin?',
+                text: `Anda akan ${message}`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: confirm
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        url: btn.data('href'),
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        data: {
+                            _method: 'PUT',
+                            value,
+                        },
+                        dataType: 'json',
+                        success: function(res) {
+                            if(res.status) {
+                                Toast.fire({
+                                    icon: 'success',
+                                    title: res.message
+                                }).then((result) => {
+                                    window.location.href = res.url
+                                })
+                            } else {
+                                Toast.fire({
+                                    icon: 'error',
+                                    title: res.message
+                                })
+                            }
+                        }
+                    })
+                }
+            })
+        })
+        function onClickDelete(e) {
+            const id = e.id.replace('deletequestion','');
+            const questionElement = document.getElementById(`question${id}`)
+
+            if (questionElement != null) {
+                questionElement.remove()
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'bottom-start',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: false,
+                })
+                Toast.fire({
+                    icon: 'success',
+                    iconColor: 'white',
+                    background: 'green',
+                    title: 'Item dihapus'
+                })
+            }
+        }
+        function onClickHide(e) {
+            const id = e.id.replace('deletequestion','');
+            const questionElement = document.getElementById(`question${id}`)
+
+            if (questionElement) {
+                const deleteElement = `<input type="hidden" name="questions[${id}][deleted]" value="1">`
+                $(`#question${id}`).append(deleteElement)
+                $(`#question${id}`).hide()
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'bottom-start',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: false,
+                })
+                Toast.fire({
+                    icon: 'success',
+                    iconColor: 'white',
+                    background: 'green',
+                    title: 'Item dihapus'
+                })
+            }
+        }
+        function onClickIconDelete(e) {
+            const id = e.id.replace('deleteimage','')
+            const hasImage = e.dataset.image
+            const status = e.dataset.status
+            if (status == 'edit') {
+                if (hasImage == 1) {
+                    if (!$(`#image_deleted${id}`).length) {
+                        const element = `<input type="hidden" id="image_deleted${id}" name="questions[${id}][image_deleted]" value="1">`
+                        $(`#question${id}`).append(element)
+                    }
+                }
+            }
+            e.style.display = 'none'
+            document.getElementById(`rowimage${id}`).style.display = 'none'
+            document.getElementById(`image${id}`).value = []
+            document.getElementById(`titleimage${id}`).textContent = ''
+        }
+        function onChangeFile(e) {
+            const id = e.id.replace('image','')
+            const hasImage = e.dataset.image
+            const status = e.dataset.status
+            if (status == 'edit') {
+                if (hasImage == 1) {
+                    if (e.files[0]) {
+                        document.getElementById(`titleimage${id}`).textContent = e.files[0].name
+                        $(`#titleimage${id}`).attr("href", "javascript:void(0);")
+                        $(`#titleimage${id}`).removeAttr('target')
+                        document.getElementById(`deleteimage${id}`).style.display = 'inline'
+                        document.getElementById(`rowimage${id}`).style.display = 'block'
+                    } else {
+                        document.getElementById(`rowimage${id}`).style.display = 'none'
+                        document.getElementById(`titleimage${id}`).textContent = ''
+                        document.getElementById(`deleteimage${id}`).style.display = 'none'
+                    }
+                } else {
+                    if (e.files[0]) {
+                        document.getElementById(`rowimage${id}`).style.display = 'block'
+                        document.getElementById(`titleimage${id}`).textContent = e.files[0].name
+                        document.getElementById(`deleteimage${id}`).style.display = 'inline'
+                        $(`#titleimage${id}`).removeAttr('target')
+                    } else {
+                        document.getElementById(`rowimage${id}`).style.display = 'none'
+                        document.getElementById(`titleimage${id}`).textContent = ''
+                        document.getElementById(`deleteimage${id}`).style.display = 'none'
+                    }
+                }
+            } else {
+                if (e.files[0]) {
+                    document.getElementById(`rowimage${id}`).style.display = 'block'
+                    document.getElementById(`titleimage${id}`).textContent = e.files[0].name
+                    document.getElementById(`deleteimage${id}`).style.display = 'inline'
+                } else {
+                    document.getElementById(`rowimage${id}`).style.display = 'none'
+                    document.getElementById(`titleimage${id}`).textContent = ''
+                    document.getElementById(`deleteimage${id}`).style.display = 'none'
+                }
+            }
+        }
     </script>
     <script>
     $('div.alert').not('.alert-warning').delay(5000).fadeOut(350);

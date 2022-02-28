@@ -3,7 +3,9 @@
 use App\Http\Controllers\ClasController;
 use App\Http\Controllers\ClasSubjectController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExamController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
@@ -57,6 +59,18 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::post('profile', [ProfileController::class, 'store'])->name('profile.store');
+
+    Route::get('{kelasId}/ujian/create', [ExamController::class, 'create'])->name('ujian.create');
+    Route::get('{kelasId}/ujian/{exam:slug}/edit', [ExamController::class, 'edit'])->name('ujian.edit');
+    Route::get('{kelasId}/ujian/{exam:slug}', [ExamController::class, 'show'])->name('ujian.show');
+    Route::post('{kelasId}/ujian', [ExamController::class, 'store'])->name('ujian.store');
+    Route::put('{kelasId}/ujian/{exam:slug}', [ExamController::class, 'update'])->name('ujian.update');
+    Route::put('{kelasId}/ujian/{exam:slug}/status', [ExamController::class, 'status'])->name('ujian.status');
+    Route::put('{kelasId}/ujian/{exam:slug}/mix', [ExamController::class, 'mixQuestion'])->name('ujian.mix');
+    Route::delete('{kelasId}/ujian/{exam:slug}', [ExamController::class, 'destroy'])->name('ujian.destroy');
+
+    Route::post('{kelasId}/ujian/{exam:slug}/question', [QuestionController::class, 'store'])->name('soal.store');
+    Route::put('{kelasId}/ujian/{exam:slug}/question', [QuestionController::class, 'update'])->name('soal.update');
 });
 
 Route::get('siswa', [StudentController::class, 'code'])->name('student.code');

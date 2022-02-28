@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Clas;
 use App\Models\ClasSubject;
+use App\Models\Exam;
 use App\Models\Season;
 use App\Models\Subject;
 use Illuminate\Http\Request;
@@ -79,8 +80,10 @@ class ClasSubjectController extends Controller
     public function show($id)
     {
         $data = ClasSubject::where('id', $id)->with(['clas', 'subject'])->first();
+        $exams = Exam::where('clas_subject_id', $id)->get();
+        $examsCount = Exam::where('clas_subject_id', $id)->count();
 
-        return view('class_subject.show', compact('data'));
+        return view('class_subject.show', compact('data', 'exams', 'examsCount'));
     }
 
     /**
