@@ -1,25 +1,5 @@
 @extends('layouts.app')
 
-@section('content-header')
-{{-- <div class="content-header-left col-md-9 col-12 mb-2">
-    <div class="row breadcrumbs-top">
-        <div class="col-12">
-            <a href="{{ url()->previous() }}" class="btn btn-secondary"><i class="feather icon-arrow-left"></i> Kembali</a>
-        </div>
-    </div>
-</div> --}}
-{{-- <div class="content-header-left col-md-6 col-12 mb-2">
-    <div class="row breadcrumbs-top">
-        <div class="breadcrumb-wrapper col-12">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ url()->previous() }}">Kembali</a>
-                </li>
-            </ol>
-        </div>
-    </div>
-</div> --}}
-@endsection
-
 @section('content')
 <section id="configuration">
     <div class="row justify-content-center">
@@ -27,7 +7,7 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ url()->previous() }}"><i class="fa fa-arrow-left"></i> Kembali</a>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.kelas.index') }}"><i class="fa fa-arrow-left"></i> Kembali</a>
                         </li>
                     </ol>
                 </div>
@@ -35,9 +15,9 @@
             @include('flash::message')
             <div class="card mt-1">
                 <div class="card-header">
-                    <h4 class="card-title">Data Siswa {{ $clasSubject->clas->name }}/{{ $clasSubject->subject->name }}/{{ $clasSubject->season->name }}</h4>
+                    <h4 class="card-title">Data Siswa {{ $clas->name }}</h4>
                     <div class="card-subtitle float-right">
-                        <a class="btn btn-primary btn-modal" href="javascript:void(0);" data-href="{{ route('admin.kelas-siswa.create', [$clasSubject->id]) }}" data-container=".app-modal"><i class="ft-plus"></i> Tambah</a>
+                        <a class="btn btn-primary btn-modal" href="javascript:void(0);" data-href="{{ route('admin.kelas-siswa.create', [$clas->id]) }}" data-container=".app-modal"><i class="ft-plus"></i> Tambah</a>
                     </div>
                 </div>
                 <div class="card-content collapse show">
@@ -59,8 +39,8 @@
                                         <td>{{ $value->number ?? '' }}</td>
                                         <td>{{ $value->name ?? '' }}</td>
                                         <td>
-                                            <button data-href="{{ route('admin.kelas-siswa.edit', [$clasSubject->id, $value->id]) }}" data-container=".app-modal" class="btn btn-warning btn-sm btn-modal"><i class="ft-edit-2"></i> Edit</button>
-                                            <button data-href="{{ route('admin.kelas-siswa.destroy', [$clasSubject->id, $value->id]) }}" class="btn btn-danger btn-sm btn-delete"><i class="ft-trash-2"></i> Hapus</button> 
+                                            <button data-href="{{ route('admin.kelas-siswa.edit', [$clas->id, $value->id]) }}" data-container=".app-modal" class="btn btn-warning btn-sm btn-modal"><i class="ft-edit-2"></i> Edit</button>
+                                            <button data-href="{{ route('admin.kelas-siswa.destroy', [$clas->id, $value->id]) }}" class="btn btn-danger btn-sm btn-delete"><i class="ft-trash-2"></i> Hapus</button> 
                                         </td>
                                     </tr>
                                     @endforeach

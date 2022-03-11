@@ -19,7 +19,8 @@ class DashboardController extends Controller
                                     $q->with([
                                         'clas',
                                         'subject'
-                                    ]);
+                                    ])
+                                    ->orderBy('cname', 'asc');
                                 }])
                                 ->withCount(['clasSubjects'])
                                 ->get();

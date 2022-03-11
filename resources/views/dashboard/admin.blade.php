@@ -38,14 +38,5 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-md-6 col-sm-12">
-        <div class="card">
-            <div class="card-content">
-                <div class="card-body d-flex justify-content-center">
-                    <a href="{{ route('admin.kelas-siswa.clas')  }}" class="btn btn-outline-primary">Siswa</a>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection

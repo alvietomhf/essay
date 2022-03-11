@@ -29,6 +29,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $value->name ?? '' }}</td>
                                         <td>
+                                            <a href="{{ route('admin.kelas-siswa.index', [$value->id]) }}" class="btn btn-primary btn-sm"><i class="far fa-eye"></i> Siswa</a>
                                             <button data-href="{{ route('admin.kelas.edit', [$value->id]) }}" data-container=".app-modal" class="btn btn-warning btn-sm btn-modal"><i class="ft-edit-2"></i> Edit</button>
                                             <button data-href="{{ route('admin.kelas.destroy', [$value->id]) }}" class="btn btn-danger btn-sm btn-delete"><i class="ft-trash-2"></i> Hapus</button> 
                                         </td>

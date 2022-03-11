@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Clas;
+use App\Models\ClasSubject;
 use App\Models\Exam;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -196,5 +199,56 @@ class ExamController extends Controller
                 'message' => 'Gagal mengedit urutan soal',
             ]);
         }
+    }
+
+    public function preview($kelasId, Exam $exam)
+    {
+        $data = Exam::where('id', $exam->id)
+                        ->with([
+                            'clasSubject',
+                            'clasSubject.clas',
+                            'clasSubject.subject',
+                            'questions' => function ($q) use ($exam) {
+                                if ($exam->mix_question) {
+                                    $q->inRandomOrder();
+                                }
+                            },
+                        ])
+                        ->withCount(['questions'])
+                        ->first();
+
+        return view('exam.preview', compact('data', 'kelasId'));
+    }
+
+    public function showResult($kelasId, Exam $exam)
+    {
+        $data = Exam::where('id', $exam->id)
+                        ->with([
+                            'clasSubject',
+                            'clasSubject.clas',
+                            'clasSubject.subject',
+                            'questions'
+                        ])
+                        ->withCount(['questions'])
+                        ->first();
+
+        $clasSubject = ClasSubject::find($kelasId); 
+        $students = Student::where('clas_id', $clasSubject->clas_id)
+                            ->with([
+                                'results' => function ($q) use ($exam) {
+                                    $q->where('exam_id', $exam->id);
+                                },
+                                'results.details' => function ($q) {
+                                    $q->orderBy('question_id', 'asc');
+                                },
+                            ])
+                            ->withCount([
+                                'results' => function ($q) use ($exam) {
+                                    $q->where('exam_id', $exam->id);
+                                },
+                            ])
+                            ->get();
+
+        return view('exam.result', compact('data', 'kelasId', 'students'));
     }
 }

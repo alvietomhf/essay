@@ -9,6 +9,7 @@
     <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
     <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
     <meta name="author" content="PIXINVENT">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>CMS</title>
     <link rel="apple-touch-icon" href="{{ asset('assets/images/ico/apple-icon-120.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/ico/favicon.ico') }}">
@@ -52,7 +53,7 @@
                 <section class="row flexbox-container">
                     <div class="col-12 d-flex align-items-center justify-content-center">
                         <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
-                            <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                            <div class="card border-grey border-lighten-3 px-1 py-2 m-2">
                                 <div class="card-header border-0">
                                     <div class="card-title text-center">
                                         <img src="{{ asset('assets/images/logo/logo-ma.png') }}" style="width: 40%;height: 40%;object-fit: scale-down;" alt="branding logo">
@@ -60,23 +61,16 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form-horizontal" action="javascript:myFunction(); return false;" method="POST">
-                                            @csrf
+                                        <form id="join-exam" class="form-horizontal" data-action="{{ route('student.exam.join') }}">
                                             <fieldset class="form-group">
                                                 <input
                                                 oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
                                                 oninput="this.setCustomValidity('')"
-                                                type="text" class="form-control @error('number') is-invalid @enderror mb-1" id="number" name="number" placeholder="Nomor Ujian" value="{{ old('number') }}" style="text-align: center;" required autofocus>
-                                                @error('number')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
+                                                type="text" class="form-control mb-1" id="number" name="number" placeholder="Nomor Ujian" value="{{ old('number') }}" style="text-align: center;" required autofocus>
                                                 <input
                                                 oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
                                                 oninput="this.setCustomValidity('')"
-                                                type="text" class="form-control @error('code') is-invalid @enderror" id="code" name="code" placeholder="Kode Ujian" value="{{ old('code') }}" style="text-align: center;" required autofocus>
-                                                @error('code')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
+                                                type="text" class="form-control mb-1" id="code" name="code" placeholder="Kode Ujian" value="{{ old('code') }}" style="text-align: center;" required autofocus>
                                                 <p class="text-center mt-1">Tanyakan kepada Guru Pengajar apabila belum mendapatkan kode Ujian</p>
                                             </fieldset>
                                             <button type="submit" class="btn btn-primary btn-block mt-n2">Masuk</button>
@@ -112,5 +106,33 @@
 
 </body>
 <!-- END: Body-->
+<script>
+    $(document).ready(function () {
+        // Store
+        $(document).on('submit', '#join-exam', function(e) {
+            e.preventDefault()
+            const data = $(this).serialize()
+            $(document).find('p.text-error').remove()
+
+            $.ajax({
+                url: $(this).data('action'),
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: data,
+                dataType: 'json',
+                success: function (res) {
+                    if (res.status) {
+                        window.location.href = res.url
+                    }
+                },
+                error: function (res) {
+                    $(document).find('#code').after(`<p class="small text-danger text-error text-center">${res.responseJSON.message}</p>`)
+                },
+            })
+        })
+    })
+</script>
 
 </html>

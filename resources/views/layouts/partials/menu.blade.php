@@ -14,7 +14,8 @@
                                         'subject',
                                         'exams',
                                     ])
-                                    ->withCount(['exams']);
+                                    ->withCount(['exams'])
+                                    ->orderBy('cname', 'asc');
                                 }])
                                 ->withCount(['clasSubjects'])
                                 ->get();

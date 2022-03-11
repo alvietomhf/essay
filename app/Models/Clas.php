@@ -17,4 +17,9 @@ class Clas extends Model
     {
         return $this->hasMany(ClasSubject::class);
     }
+    
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
 }

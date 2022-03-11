@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Clas;
 use App\Models\ClasSubject;
 use Illuminate\Database\Seeder;
 
@@ -16,6 +17,7 @@ class ClasSubjectSeeder extends Seeder
     {
         ClasSubject::create([
             'clas_id' => 1,
+            'cname' => Clas::find(1)->name,
             'subject_id' => 1,
             'season_id' => 1,
             'user_id' => 2,
@@ -23,6 +25,7 @@ class ClasSubjectSeeder extends Seeder
         ]);
         ClasSubject::create([
             'clas_id' => 2,
+            'cname' => Clas::find(2)->name,
             'subject_id' => 1,
             'season_id' => 1,
             'user_id' => 2,
@@ -30,6 +33,7 @@ class ClasSubjectSeeder extends Seeder
         ]);
         ClasSubject::create([
             'clas_id' => 3,
+            'cname' => Clas::find(3)->name,
             'subject_id' => 1,
             'season_id' => 1,
             'user_id' => 2,
@@ -37,6 +41,7 @@ class ClasSubjectSeeder extends Seeder
         ]);
         ClasSubject::create([
             'clas_id' => 4,
+            'cname' => Clas::find(4)->name,
             'subject_id' => 1,
             'season_id' => 1,
             'user_id' => 2,

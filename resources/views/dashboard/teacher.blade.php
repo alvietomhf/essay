@@ -20,7 +20,7 @@
             <td style="width:1px; padding: 0 10px; white-space: nowrap;"><h3 class="text-dark font-weight-bold">TP. {{ $value->name }}</h3></td>
             <td><hr /></td>
         </table>
-        <div class="d-flex flex-xl-row flex-column">
+        <div class="row">
             @foreach ($value->clasSubjects as $key => $value)
             <div class="col-xl-3 col-12">
                 <a class="card stretched-link" href="{{ route('kelas-mapel.show', [$value->id]) }}">

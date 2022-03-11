@@ -61,8 +61,9 @@ class ClasSubjectController extends Controller
         ClasSubject::create(array_merge(
             $input,
             [
-            'user_id' => auth()->user()->id,
-            'color' => $request->color ?? $color[array_rand($color)],
+                'cname' => Clas::find($request->clas_id)->name,
+                'user_id' => auth()->user()->id,
+                'color' => $request->color ?? $color[array_rand($color)],
             ]
         ));
 

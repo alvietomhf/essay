@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbar-mobile">
                 <ul class="nav navbar-nav mr-auto float-left">
                     <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="javascript:void(0);"><i class="ft-menu"></i></a></li>
-                    <li class="dropdown nav-item mega-dropdown d-none d-lg-block"><a class="dropdown-toggle nav-link" @role('admin') href="{{ route('admin.dashboard') }}" @else href="{{ route('dashboard') }}" @endrole><span class="mr-1 user-name text-bold-700">@yield('header-title', 'MA KANJENG SEPUH SIDAYU')</span></a></li>
+                    <li class="dropdown nav-item mega-dropdown d-none d-lg-block"><a class="dropdown-toggle nav-link" @role('admin') href="@yield('header-hrefadm', route('admin.dashboard'))" @else href="@yield('header-href', route('dashboard'))" @endrole><span class="mr-1 user-name text-bold-700">@yield('header-title', 'MA KANJENG SEPUH SIDAYU')</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav float-right">
                     @if (auth()->user()->hasRole('teacher') && request()->is('dashboard'))

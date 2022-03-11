@@ -11,6 +11,7 @@ class ClasSubject extends Model
 
     protected $fillable = [
         'clas_id',
+        'cname',
         'subject_id',
         'season_id',
         'user_id',
@@ -35,11 +36,6 @@ class ClasSubject extends Model
     public function teacher()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function students()
-    {
-        return $this->hasMany(Student::class);
     }
 
     public function exams()

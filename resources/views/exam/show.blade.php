@@ -1,16 +1,23 @@
 @extends('layouts.app')
 
+@section('header-href')
+    {{ route('kelas-mapel.show', [$data->clasSubject->id]) }}
+@endsection
+
 @section('header-color')
     {{ $data->clasSubject->color }}
 @endsection
 
 @section('header-clas-exam')
+<li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link btn-modal" id="dropdown-flag"  href="{{ route('ujian.preview', [$kelasId, $data->slug]) }}" onclick="window.location.href = this.href" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-eye fa-lg"></i></a>
+</li>
 <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="fa fa-ellipsis-v fa-lg"></i><span class="selected-language"></span></a>
     <div class="dropdown-menu dropdown-menu-right">
         <a class="dropdown-item btn-modal" href="javascript:void(0);" data-href="{{ route('ujian.edit', [$kelasId, $data->slug]) }}" data-container=".app-modal"><i class="fa fa-edit"></i> Edit Ujian</a>
         <a class="dropdown-item btn-delete" href="javascript:void(0);" data-href="{{ route('ujian.destroy', [$kelasId, $data->slug]) }}"><i class="fa fa-trash"></i> Hapus Ujian</a>
         <a class="dropdown-item btn-change" href="javascript:void(0);" data-href="{{ route('ujian.status', [$kelasId, $data->slug]) }}" data-message="{{ $data->is_active ? 'menonaktifkan form ini!' : 'mengaktifkan form ini!' }}" data-confirm="{{ $data->is_active ? 'Ya, Nonaktifkan!' : 'Ya, Aktifkan!' }}" data-value={{ $data->is_active ? 0 : 1 }}><i class="fa fa-toggle-{{ $data->is_active ? 'on' : 'off' }}"></i> {{ $data->is_active ? 'Aktif' : 'Non-aktif' }}</a>
         <a class="dropdown-item btn-change" href="javascript:void(0);" data-href="{{ route('ujian.mix', [$kelasId, $data->slug]) }}" data-message="{{ $data->mix_question ? 'mengurutkan soal ini!' : 'mengacak soal ini!' }}" data-confirm="{{ $data->mix_question ? 'Ya, Urutkan!' : 'Ya, Acak!' }}" data-value={{ $data->mix_question ? 0 : 1 }}><i class="fa fa-{{ $data->mix_question ? 'random' : 'sort' }}"></i> {{ $data->mix_question ? 'Soal Acak' : 'Soal Urut' }}</a>
+        <a class="dropdown-item" href="{{ route('ujian.show.result', [$kelasId, $data->slug]) }}"><i class="fas fa-clipboard-list"></i> Hasil Jawaban</a>
     </div>
 </li>
 @endsection
@@ -164,6 +171,9 @@
             <div class="row">
                 <div class="col-12 d-flex justify-content-start">
                     <button class="btn btn-secondary round" style="color: white;" type="submit">Simpan</button>
+                </div>
+                <div class="col-12 mt-1">
+                    <p>*Jangan lupa untuk menyimpan setelah menambahkan/mengubah soal dan kunci jawaban baru</p>
                 </div>
             </div>
         </form>

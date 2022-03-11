@@ -10,13 +10,18 @@ class Student extends Model
     use HasFactory;
 
     protected $fillable = [
-        'clas_subject_id',
+        'clas_id',
         'number',
         'name',
     ];
 
-    public function clasSubject()
+    public function clas()
     {
-        return $this->belongsTo(ClasSubject::class, 'clas_subject_id');
+        return $this->belongsTo(Clas::class, 'clas_id');
+    }
+
+    public function results()
+    {
+        return $this->hasMany(ExamResult::class);
     }
 }
