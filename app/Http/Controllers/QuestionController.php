@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exam;
+use App\Models\ExamResult;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -67,12 +68,23 @@ class QuestionController extends Controller
             return response()->json([
                 'status' => false,
                 'message' => 'Gagal menambahkan pertanyaan',
-            ]);
+            ], 500);
         }
     }
 
     public function update(Request $request, $kelasId, Exam $exam)
     {
+        $resultsCount = ExamResult::where('exam_id', $exam->id)->count();
+
+        if ($resultsCount != 0) {
+            flash('Tidak bisa mengubah! Sudah ada siswa yang mengerjakan')->error();
+
+            return response()->json([
+                'status' => true,
+                'url' => route('ujian.show', [$kelasId, $exam->slug]),
+            ]);
+        }
+
         $input = $request->all();
         $validator = Validator::make($input, [
             'questions' => 'required|array|min:1',
@@ -168,7 +180,7 @@ class QuestionController extends Controller
             return response()->json([
                 'status' => false,
                 'message' => 'Gagal mengedit pertanyaan',
-            ]);
+            ], 500);
         }
     }
 }
