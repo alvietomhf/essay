@@ -73,6 +73,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('{kelasId}/ujian/{exam:slug}/question', [QuestionController::class, 'store'])->name('soal.store');
     Route::put('{kelasId}/ujian/{exam:slug}/question', [QuestionController::class, 'update'])->name('soal.update');
+
+    Route::get('{kelasId}/ujian/{exam:slug}/siswa/{siswaId}/result/{resultId}', [ResultController::class, 'show'])->name('result.show');
+    Route::delete('{kelasId}/ujian/{exam:slug}/result/{id}', [ResultController::class, 'destroy'])->name('result.destroy');
 });
 
 Route::get('siswa', [StudentController::class, 'code'])->name('student.code');

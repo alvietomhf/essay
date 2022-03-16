@@ -67,7 +67,11 @@
                                 @foreach ($students as $key => $value)
                                 <tr>
                                     <td>{{ $value->number ?? '' }}</td>
-                                    <td>{{ $value->name ?? '' }}</td>
+                                    <td>
+                                        <a href="javascript:void(0);" @if($value->results_count != 0) class="btn-modal" data-href="{{ route('result.show', [$kelasId, $data->slug, $value->id, $value->results[0]->id]) }}" data-container=".app-modal" @endif style="color: blue; text-decoration:underline;">
+                                            {{ $value->name ?? '' }}
+                                        </a>
+                                    </td>
                                     @if ($value->results_count != 0)
                                     @foreach ($value->results as $key => $result)
                                     @foreach ($result->details as $key => $detail)
@@ -91,4 +95,95 @@
         </div>
     </div>
 </div>
+<div class="modal app-modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true"></div>
+@endsection
+
+@section('js')
+<script>
+    $('.btn-change').on('click', function(e) {
+        var btn = $(this);
+        const message = btn.data('message')
+        const confirm = btn.data('confirm')
+        const value = btn.data('value')
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1000,
+            timerProgressBar: true,
+        })
+        e.stopPropagation();
+        Swal.fire({
+            title: 'Anda yakin?',
+            text: `Anda akan ${message}`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: confirm
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: btn.data('href'),
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {
+                        _method: 'PUT',
+                        value,
+                    },
+                    dataType: 'json',
+                    success: function(res) {
+                        if(res.status) {
+                            Toast.fire({
+                                icon: 'success',
+                                title: res.message
+                            }).then((result) => {
+                                window.location.href = res.url
+                            })
+                        } else {
+                            Toast.fire({
+                                icon: 'error',
+                                title: res.message
+                            })
+                        }
+                    }
+                })
+            }
+        })
+    })
+
+    // Update Exam
+    $(document).on('submit', '#edit-exam', function(e) {
+        e.preventDefault()
+        const title = $('#title').val()
+        const description = $('#description').val()
+        $(document).find('small.text-error').remove()
+
+        $.ajax({
+            url: $(this).data('action'),
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: {
+                _method: 'PUT',
+                title,
+                description,
+            },
+            dataType: 'json',
+            success: function (res) {
+                if (res.status) {
+                    window.location.href = res.url
+                }
+            },
+            error: function (res) {
+                $.each(res.responseJSON.data, function(key, error) {
+                    $(document).find(`[name=${key}]`).after(`<small class="text-danger text-error">${error}</small>`)
+                })
+            },
+        })
+    })
+</script>
 @endsection

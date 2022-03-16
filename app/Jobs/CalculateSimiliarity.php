@@ -52,7 +52,8 @@ class CalculateSimiliarity implements ShouldQueue
                 $answerStudent = $detail->answer;
                 $answerKey = $question->answer_key;
 
-                $command = escapeshellcmd('C:\Users\Alvieto\AppData\Local\Programs\Python\Python39\python.exe ' . public_path() .  '\rabbinkarp.py ' . escapeshellarg($answerStudent) . ' ' . escapeshellarg($answerKey));
+                // $command = escapeshellcmd('C:\Users\Alvieto\AppData\Local\Programs\Python\Python39\python.exe ' . public_path() .  '\rabbinkarp.py ' . escapeshellarg($answerStudent) . ' ' . escapeshellarg($answerKey));
+                $command = escapeshellcmd('/usr/bin/python3 /var/www/rabbin-similiarity/public/rabbinlinux.py ' . escapeshellarg($answerStudent) . ' ' . escapeshellarg($answerKey));
                 $output = rtrim(shell_exec($command), "\n");
 
                 $simScore = floatval($output);
