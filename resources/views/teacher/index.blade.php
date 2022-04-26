@@ -15,11 +15,11 @@
                 <div class="card-content collapse show">
                     <div class="card-body card-dashboard">
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered zero-configuration datatable">
+                            <table id="datatable" class="table table-striped table-bordered datatable">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Name</th>
+                                        <th>Nama</th>
                                         <th>Username</th>
                                         <th>Email</th>
                                         <th>Nomor HP</th>
@@ -55,6 +55,32 @@
 @section('js')
 <script>
     $(document).ready(function () {
+        // Datatable
+        $('#datatable').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'copy',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4]
+                    }
+                },
+                {
+                    extend: 'excel',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4]
+                    }
+                },
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4]
+                    }
+                },
+            ]
+        })
+        $(".buttons-copy, .buttons-print, .buttons-excel").removeClass("btn-secondary").addClass("btn btn-primary mr-1")
+
         // Toogle Password
         $(document).on('click', '.toggle-password', function() {
             $(this).toggleClass('ft-eye-off')

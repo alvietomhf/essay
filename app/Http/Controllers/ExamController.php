@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Clas;
 use App\Models\ClasSubject;
 use App\Models\Exam;
+use App\Models\ExamResult;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -248,7 +249,9 @@ class ExamController extends Controller
                                 },
                             ])
                             ->get();
+        
+        $resultCount = ExamResult::where('exam_id', $exam->id)->count();
 
-        return view('exam.result', compact('data', 'kelasId', 'students'));
+        return view('exam.result', compact('data', 'kelasId', 'students', 'resultCount'));
     }
 }

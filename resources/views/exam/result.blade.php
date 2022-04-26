@@ -49,7 +49,7 @@
             <div class="card-content collapse show">
                 <div class="card-body card-dashboard">
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered scroll-vertical">
+                        <table id="datatable" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th rowspan="2">No</th>
@@ -73,16 +73,20 @@
                                         </a>
                                     </td>
                                     @if ($value->results_count != 0)
-                                    @foreach ($value->results as $key => $result)
-                                    @foreach ($result->details as $key => $detail)
-                                    <td>{{ $detail->similiarity_score ?? '' }}</td>
-                                    @endforeach
-                                    <td>{{ $result->score ?? '' }}</td>
-                                    @endforeach
+                                        @foreach ($value->results as $key => $result)
+                                            @foreach ($result->details as $key => $detail)
+                                                <td>{{ $detail->similiarity_score ?? '' }}</td>
+                                            @endforeach
+                                            <td>{{ $result->score ?? '' }}</td>
+                                        @endforeach
                                     @else
-                                    @for ($i = 1; $i <= $data->questions_count; $i++)
-                                    <td></td>
-                                    @endfor
+                                        @if ($data->questions_count)
+                                            @for ($i = 1; $i <= $data->questions_count; $i++)
+                                                <td></td>
+                                            @endfor
+                                        @else
+                                            <td></td>
+                                        @endif
                                     <td></td>
                                     @endif
                                 </tr>
@@ -100,6 +104,38 @@
 
 @section('js')
 <script>
+    // Datatable
+    const resultCount = @json($resultCount);
+    if (resultCount) {
+        $('#datatable').DataTable({
+            scrollY: "250px",
+            scrollCollapse: true,
+            paging: false,
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'copy',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4]
+                    }
+                },
+                {
+                    extend: 'excel',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4]
+                    }
+                },
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4]
+                    }
+                },
+            ]
+        })
+        $(".buttons-copy, .buttons-print, .buttons-excel").removeClass("btn-secondary").addClass("btn btn-primary mr-1")
+    }
+
     $('.btn-change').on('click', function(e) {
         var btn = $(this);
         const message = btn.data('message')

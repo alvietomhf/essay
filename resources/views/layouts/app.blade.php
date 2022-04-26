@@ -85,6 +85,13 @@
 
     <!-- BEGIN: Page Vendor JS-->
     <script src="{{ asset('assets/vendors/js/tables/datatable/datatables.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/js/tables/datatable/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/js/tables/buttons.flash.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/js/tables/jszip.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/js/tables/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/js/tables/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('assets/vendors/js/tables/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/js/tables/buttons.print.min.js') }}"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -94,6 +101,7 @@
 
     <!-- BEGIN: Page JS-->
     <script src="{{ asset('assets/js/scripts/tables/datatables/datatable-basic.js') }}"></script>
+    <script src="{{ asset('assets/js/scripts/tables/datatables/datatable-advanced.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('assets/js/scripts/modal/components-modal.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
