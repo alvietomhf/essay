@@ -69,9 +69,12 @@
                                 <div class="col-xl-11 col-10">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Pertanyaan" id="title0" name="questions[0][title]" required
+                                            {{-- <input class="form-control" type="text" placeholder="Pertanyaan" id="title0" name="questions[0][title]" required
                                             oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
-                                            oninput="this.setCustomValidity('')">
+                                            oninput="this.setCustomValidity('')"> --}}
+                                            <textarea name="questions[0][title]" class="form-control" id="title0" cols="30" rows="5" placeholder="Pertanyaan" required
+                                            oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
+                                            oninput="this.setCustomValidity('')"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -94,9 +97,12 @@
                                 <div class="col-xl-11 col-10">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Kunci jawaban" id="answer_key0" name="questions[0][answer_key]" required
+                                            {{-- <input class="form-control" type="text" placeholder="Kunci jawaban" id="answer_key0" name="questions[0][answer_key]" required
                                             oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
-                                            oninput="this.setCustomValidity('')">
+                                            oninput="this.setCustomValidity('')"> --}}
+                                            <textarea name="questions[0][answer_key]" class="form-control" id="answer_key0" cols="30" rows="2" placeholder="Kunci jawaban" required
+                                            oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
+                                            oninput="this.setCustomValidity('')"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -128,9 +134,12 @@
                                     <div class="form-body">
                                         <div class="form-group">
                                             <input type="hidden" name="questions[{{ $key }}][id]" value="{{ $value->id }}">
-                                            <input class="form-control" type="text" placeholder="Pertanyaan" id="title{{ $key }}" name="questions[{{ $key }}][title]" required value="{{ $value->title }}"
+                                            {{-- <input class="form-control" type="text" placeholder="Pertanyaan" id="title{{ $key }}" name="questions[{{ $key }}][title]" required value="{{ $value->title }}"
                                             oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
-                                            oninput="this.setCustomValidity('')">
+                                            oninput="this.setCustomValidity('')"> --}}
+                                            <textarea name="questions[{{ $key }}][title]" class="form-control" id="title{{ $key }}" cols="30" rows="5" placeholder="Pertanyaan" required
+                                            oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
+                                            oninput="this.setCustomValidity('')">{{ $value->title ?? '' }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -153,9 +162,12 @@
                                 <div class="col-xl-11 col-10">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Kunci jawaban" id="answer_key{{ $key }}" name="questions[{{ $key }}][answer_key]" required value="{{ $value->answer_key }}"
+                                            {{-- <input class="form-control" type="text" placeholder="Kunci jawaban" id="answer_key{{ $key }}" name="questions[{{ $key }}][answer_key]" required value="{{ $value->answer_key }}"
                                             oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
-                                            oninput="this.setCustomValidity('')">
+                                            oninput="this.setCustomValidity('')"> --}}
+                                            <textarea name="questions[{{ $key }}][answer_key]" class="form-control" id="answer_key{{ $key }}" cols="30" rows="2" placeholder="Kunci jawaban" required
+                                            oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
+                                            oninput="this.setCustomValidity('')">{{ $value->answer_key ?? '' }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -358,7 +370,7 @@
 
     // Detect changes
     let formChangeFlag = false
-    $('#edit-question, #create-question').on('change', ':input', function(e) {
+    $('#edit-question, #create-question').on('input propertychange', function(e) {
         formChangeFlag = true
     })
     $(window).bind('beforeunload', function(e) {
@@ -416,9 +428,9 @@
                             <div class="col-xl-11 col-10">
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Pertanyaan" id="title${counter}" name="questions[${counter}][title]" required
+                                        <textarea name="questions[${counter}][title]" class="form-control" id="title${counter}" cols="30" rows="5" placeholder="Pertanyaan" required
                                         oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
-                                        oninput="this.setCustomValidity('')">
+                                        oninput="this.setCustomValidity('')"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -441,9 +453,9 @@
                             <div class="col-xl-11 col-10">
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Kunci jawaban" id="answer_key${counter}" name="questions[${counter}][answer_key]" required
+                                        <textarea name="questions[${counter}][answer_key]" class="form-control" id="answer_key${counter}" cols="30" rows="2" placeholder="Kunci jawaban" required
                                         oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
-                                        oninput="this.setCustomValidity('')">
+                                        oninput="this.setCustomValidity('')"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -467,9 +479,9 @@
                                 <div class="form-body">
                                     <div class="form-group">
                                         <input type="hidden" name="questions[${counter}][id]" value="-1">
-                                        <input class="form-control" type="text" placeholder="Pertanyaan" id="title${counter}" name="questions[${counter}][title]" required
+                                        <textarea name="questions[${counter}][title]" class="form-control" id="title${counter}" cols="30" rows="5" placeholder="Pertanyaan" required
                                         oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
-                                        oninput="this.setCustomValidity('')">
+                                        oninput="this.setCustomValidity('')"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -492,9 +504,9 @@
                             <div class="col-xl-11 col-10">
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Kunci jawaban" id="answer_key${counter}" name="questions[${counter}][answer_key]" required
+                                        <textarea name="questions[${counter}][answer_key]" class="form-control" id="answer_key${counter}" cols="30" rows="2" placeholder="Kunci jawaban" required
                                         oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
-                                        oninput="this.setCustomValidity('')">
+                                        oninput="this.setCustomValidity('')"></textarea>
                                     </div>
                                 </div>
                             </div>
