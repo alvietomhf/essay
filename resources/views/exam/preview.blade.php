@@ -28,7 +28,7 @@
                                     <div class="form-body">
                                         <div class="form-group">
                                             <input type="hidden" name="questions[{{ $key }}][id]" value="{{ $value->id }}">
-                                            <h4 style="font-weight: 500;">{{ $value->title ?? '' }}</h4>
+                                            <h4 style="font-weight: 500; white-space: pre;">{{ $value->title ?? '' }}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -42,9 +42,12 @@
                                 <div class="col-12">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Jawaban Anda" id="answer{{ $key }}" name="questions[{{ $key }}][answer]" required
+                                            {{-- <input class="form-control" type="text" placeholder="Jawaban Anda" id="answer{{ $key }}" name="questions[{{ $key }}][answer]" required
                                             oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
-                                            oninput="this.setCustomValidity('')">
+                                            oninput="this.setCustomValidity('')"> --}}
+                                            <textarea class="form-control" name="questions[{{ $key }}][answer]" id="answer{{ $key }}" cols="30" rows="3" placeholder="Jawaban Anda" required
+                                            oninvalid="this.setCustomValidity('Mohon diisi dengan lengkap')"
+                                            oninput="this.setCustomValidity('')"></textarea>
                                         </div>
                                     </div>
                                 </div>
