@@ -56,7 +56,7 @@
                             <div class="card border-grey border-lighten-3 px-1 py-2 m-2">
                                 <div class="card-header border-0">
                                     <div class="card-title text-center">
-                                        <img src="{{ asset('assets/images/logo/logo-ma.png') }}" style="width: 40%;height: 40%;object-fit: scale-down;" alt="branding logo">
+                                        <img src="{{ asset('assets/images/logo/logodepan.png') }}" style="width: 70%;object-fit: scale-down;" alt="branding logo">
                                     </div>
                                 </div>
                                 <div class="card-content">

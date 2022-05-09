@@ -49,8 +49,8 @@ class CalculateSimiliarity implements ShouldQueue
 
             foreach($result->details as $key => $detail) {
                 $question = Question::findOrFail($detail->question_id);
-                $answerStudent = $detail->answer;
-                $answerKey = $question->answer_key;
+                $answerStudent = preg_replace('/\s+/', ' ', $detail->answer);
+                $answerKey = preg_replace('/\s+/', ' ', $question->answer_key);
 
                 // $command = escapeshellcmd('C:\Users\Alvieto\AppData\Local\Programs\Python\Python39\python.exe ' . public_path() .  '\rabbinkarp.py ' . escapeshellarg($answerStudent) . ' ' . escapeshellarg($answerKey));
                 $command = escapeshellcmd('/usr/bin/python3 /var/www/rabbin-similiarity/public/rabbinlinux.py ' . escapeshellarg($answerStudent) . ' ' . escapeshellarg($answerKey));
