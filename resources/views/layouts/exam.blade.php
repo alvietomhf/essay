@@ -10,9 +10,9 @@
     <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
     <meta name="author" content="PIXINVENT">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>CMS</title>
-    <link rel="apple-touch-icon" href="{{ asset('assets/images/ico/apple-icon-120.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/ico/favicon.ico') }}">
+    <title>Sistem Penilaian Otomatis</title>
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/ico/iconweb.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/ico/iconweb.png') }}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
