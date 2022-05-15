@@ -28,7 +28,7 @@
                                     <div class="form-body">
                                         <div class="form-group">
                                             <input type="hidden" name="questions[{{ $key }}][id]" value="{{ $value->id }}">
-                                            <h4 style="font-weight: 500; white-space: pre;">{{ $value->title ?? '' }}</h4>
+                                            <h4 style="font-weight: 500; white-space: pre-wrap;">{{ $value->title ?? '' }}</h4>
                                         </div>
                                     </div>
                                 </div>

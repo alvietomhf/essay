@@ -25,9 +25,9 @@
             <div class="row">
                 @foreach ($result->details as $key => $value)
                 <div class="col-12">
-                    <h5 style="font-weight: 500; white-space: pre;">{{ $loop->iteration }}. {{ $value->question->title ?? '' }}</h5>
+                    <h5 style="font-weight: 500; white-space: pre-wrap;">{{ $loop->iteration }}. {{ $value->question->title ?? '' }}</h5>
                     <hr>
-                    <h5 style="font-weight: 500; white-space: pre;">{{ $value->answer ?? '' }}</h5>
+                    <h5 style="font-weight: 500; white-space: pre-wrap;">{{ $value->answer ?? '' }}</h5>
                     <div class="divider bg-dark"><hr></div>
                 </div>
                 @endforeach
