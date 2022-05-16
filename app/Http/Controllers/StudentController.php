@@ -25,7 +25,7 @@ class StudentController extends Controller
 
     public function index($kelasId)
     {
-        $data = Student::where('clas_id', $kelasId)->get();
+        $data = Student::where('clas_id', $kelasId)->orderBy('number')->get();
         $clas = Clas::where('id', $kelasId)->first();
 
         return view('student.index', compact('data', 'clas'));

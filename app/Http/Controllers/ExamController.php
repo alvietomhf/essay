@@ -248,6 +248,7 @@ class ExamController extends Controller
                                     $q->where('exam_id', $exam->id);
                                 },
                             ])
+                            ->orderBy('number')
                             ->get();
         
         $resultCount = ExamResult::where('exam_id', $exam->id)->count();
