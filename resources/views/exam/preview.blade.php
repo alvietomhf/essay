@@ -34,7 +34,7 @@
                                 </div>
                                 <figure style="display: {{ $value->image ? 'block' : 'none' }};" class="col-lg-3 col-md-6 col-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                                     <a href="javascript:void(0);" itemprop="contentUrl" data-size="480x360">
-                                        <img class="img-thumbnail img-fluid" src="{{  $value->image ? asset('storage/images/' . $value->image) : '' }}" itemprop="thumbnail" alt="Image description" />
+                                        <img class="img-thumbnail img-fluid" src="{{  $value->image ? asset('storage/images/' . $value->image) : '' }}" itemprop="thumbnail" alt="Image description" style="border-style: none; padding: 0"/>
                                     </a>
                                 </figure>
                             </div>

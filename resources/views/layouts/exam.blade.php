@@ -44,7 +44,7 @@
 
 <!-- BEGIN: Body-->
 
-<body>
+<body style="background-color: rgb(240, 235, 248)">
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-wrapper">
